@@ -32,6 +32,7 @@ def main():
     predict_test_x = model.predict(test_x)
 
     # Evaluating.
+    print(f"> evaluateMetrixAccuracy()...")
     error_train = evaluateMetrixAccuracy(train_y, predict_train_x)
     error_test = evaluateMetrixAccuracy(test_y, predict_test_x)
 
@@ -108,8 +109,8 @@ def writeOutFile(output_file: str, output_content_arr: []) -> None :
 
 def writeOutMetrix(output_file: str, error_train: float, error_test: float) -> None:
     with open(output_file, 'w') as f:
-        f.write(f"error (train): {error_train}\n")
-        f.write(f"error (test): {error_test}\n")
+        f.write(f"error(train): {error_train}\n")
+        f.write(f"error(test): {error_test}\n")
 
 def evaluateMetrixAccuracy(gt_y: [], pd_y: [[]]) -> float:
     len_gt_y = len(gt_y)
