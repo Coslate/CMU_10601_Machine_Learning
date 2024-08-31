@@ -13,7 +13,7 @@ import sys
 #########################
 def main():
     #Process the argument
-    print(f"> ArgumentParser...")
+    print(f"> argumentParser...")
     (train_in_file, test_in_file, train_out_file, test_out_file, metrix_out_file, is_debug) = argumentParser()
 
     # Read input data.
