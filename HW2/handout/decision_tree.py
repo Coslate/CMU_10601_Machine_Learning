@@ -52,14 +52,17 @@ class dTreeModel:
         largest_index = 0
         total_data_num = len(data_y)
         H_Y = self.evaluateEntropy(data_y)
+        print(f"---> Dv.feature = {Dv.feature}")
+        print(f"H_Y = {H_Y}")
         for index_column, x in enumerate(data_x_feature_name):
             H_YX = 0
             for x_v in (0, 1): #traverse all value in x column (feature)
-                index = np.where(data_x[:, index]==1)[0]
+                index = np.where(data_x[:, index_column]==x_v)[0]
                 H_condY = self.evaluateEntropy(data_y[index])
                 H_YX += len(index)/total_data_num*H_condY
 
             mutual_info = H_Y - H_YX
+            print(f"index_column = {index_column}, mutual_info = {mutual_info}")
             if mutual_info > 0 and mutual_info > largest_mutial_info:
                 largest_mutial_info = mutual_info
                 largest_index = index_column
@@ -67,6 +70,8 @@ class dTreeModel:
         return (largest_index, data_x_feature_name[largest_index])
 
     def nodeSplit(self, Dv: Dataset, depth: int) -> Node:
+        print(f"depth = {depth}")
+        print(f"Dv.feature = {Dv.feature}")
         current_node = Node()
         current_node.depth = depth
         current_node.y_stat0 = np.sum(Dv.data_y==0)
@@ -90,7 +95,7 @@ class dTreeModel:
             current_node.attr     = x_attr
             x_attr_column         = Dv.data_x[:, x_attr[0]]
             remain_data_x         = np.delete(Dv.data_x, x_attr[0], axis=1)
-            remain_feature        = Dv.feature.pop(x_attr[0])
+            remain_feature        = [x for x in Dv.feature if x != x_attr[1]]
 
             # left subtree
             x_attr_column_0_index = np.where(x_attr_column==0)[0]
@@ -150,14 +155,33 @@ class MajorityVoteModel:
     def predict(self, x: []) -> [[]]:
         return self.hx(x)
 
-def print_tree(node: Node):
-    print(f"[{node.y_stat0} 0/{npde.y_state1} 1")
-    print(f"{(node.depth+1)*'| '}", end='')
-    print(f"{node.attr[1]} == 0: ", end='')
-    print_tree(node.left)
-    print(f"{node.attr[1]} == 1: ", end='')
-    print_tree(node.right)
+def print_tree(node: Node, f):
+    if node is None:
+        return
 
+    print_sentence = f"[{node.y_stat0} 0/{node.y_stat1} 1]"
+    print(print_sentence)
+    f.write(print_sentence+'\n')
+    if node.attr is not None:
+        print_sentence = f"{(node.depth+1)*'| '}"
+        print(print_sentence, end='')
+        f.write(print_sentence)
+
+        print_sentence = f"{node.attr[1]} == 0: "
+        print(print_sentence, end='')
+        f.write(print_sentence)
+
+        print_tree(node.left, f)
+    if node.attr is not None:
+        print_sentence = f"{(node.depth+1)*'| '}"
+        print(print_sentence, end='')
+        f.write(print_sentence)
+
+        print_sentence = f"{node.attr[1]} == 1: "
+        print(print_sentence, end='')
+        f.write(print_sentence)
+
+        print_tree(node.right, f)
 
 def readData(input_file: str) -> ([], {}, [], []):
     data = np.genfromtxt(input_file, delimiter="\t", dtype=None, encoding=None)
@@ -231,14 +255,11 @@ if __name__ == '__main__':
 
     # Print the Tree.
     if is_debug: print(f"> print_tree()...")
-    print_tree(model.root_node)
+    with open(print_out, mode='w') as f:
+        print_tree(model.root_node, f)
 
 
     if(is_debug):
-        print(f"data_x_feature_train x dim = {len(data_x_feature_train)}")
-        print(f"data_x_feature_train y dim = {len(data_x_feature_train[0])}")
-        print(f"data_x_feature_test x dim = {len(data_x_feature_test)}")
-        print(f"data_x_feature_test y dim = {len(data_x_feature_test[0])}")
         print(f"data_x_train.shape = {data_x_train.shape}")
         print(f"data_x_test.shape = {data_x_test.shape}")
         print(f"data_y_train.shape = {data_y_train.shape}")
