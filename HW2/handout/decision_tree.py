@@ -16,8 +16,11 @@ class Node:
     def __init__(self):
         self.left = None
         self.right = None
-        self.attr = None
-        self.vote = None
+        self.attr = None #string, for print_tree
+        self.vote = None #only leaf node has its value
+        self.depth = None # for print_tree
+        self.y_stat0 = None # at current node before splitting, number of data with y==0, for print_tree
+        self.y_stat1 = None # at current node before splitting, number of data with y==1, for print_tree
 
 class Dataset:
     def __init__(self, features: [], data_x: NDArray[Tuple[Any, Any]], data_y: NDArray[Tuple[Any]]):
@@ -65,6 +68,9 @@ class dTreeModel:
 
     def nodeSplit(self, Dv: Dataset, depth: int) -> Node:
         current_node = Node()
+        current_node.depth = depth
+        current_node.y_stat0 = np.sum(Dv.data_y==0)
+        current_node.y_stat1 = np.sum(Dv.data_y==1)
         empty_data_set = (len(Dv.data_y) == 0)
         all_label_same = (len(Dv.data_y) == len(np.where(Dv.data_y==0)[0])) or (len(Dv.data_y) == len(np.where(Dv.data_y==1)[0]))
         tree_too_deep  = (depth >= max_depth)
@@ -81,7 +87,7 @@ class dTreeModel:
             current_node.vote = maj_vote_model.model_label
         else:
             x_attr = self.findBestAttr(Dv)
-            current_node.attr   = x_attr
+            current_node.attr     = x_attr
             x_attr_column         = Dv.data_x[:, x_attr[0]]
             remain_data_x         = np.delete(Dv.data_x, x_attr[0], axis=1)
             remain_feature        = Dv.feature.pop(x_attr[0])
@@ -108,7 +114,7 @@ class dTreeModel:
 
     def train(self, data_x_feature_name:[], data_x: NDArray[Tuple[Any, Any]], data_y:NDArray[Tuple[Any]]) -> None:
         Dv = Dataset(data_x_feature_name, data_x, data_y)
-        root_node = self.nodeSplit(Dv, 0)
+        self.root_node = self.nodeSplit(Dv, 0)
 
 class MajorityVoteModel:
     def __init__(self) -> None:
@@ -143,9 +149,15 @@ class MajorityVoteModel:
 
     def predict(self, x: []) -> [[]]:
         return self.hx(x)
-    
-def print_tree(Node):
-    pass
+
+def print_tree(node: Node):
+    print(f"[{node.y_stat0} 0/{npde.y_state1} 1")
+    print(f"{(node.depth+1)*'| '}", end='')
+    print(f"{node.attr[1]} == 0: ", end='')
+    print_tree(node.left)
+    print(f"{node.attr[1]} == 1: ", end='')
+    print_tree(node.right)
+
 
 def readData(input_file: str) -> ([], {}, [], []):
     data = np.genfromtxt(input_file, delimiter="\t", dtype=None, encoding=None)
@@ -208,14 +220,18 @@ if __name__ == '__main__':
         print(f"print_out   = {print_out}")
 
     # Readinput Training Data
-    print(f"> Read Data...")
+    if is_debug: print(f"> Read Data...")
     feature_name_train, data_x_train, data_y_train = readData(train_input)
     feature_name_test, data_x_test, data_y_test = readData(test_input)
 
     # Training.
-    print(f"> dTreeModel.train()...")
+    if is_debug: print(f"> dTreeModel.train()...")
     model = dTreeModel()
     model.train(feature_name_train, data_x_train, data_y_train)
+
+    # Print the Tree.
+    if is_debug: print(f"> print_tree()...")
+    print_tree(model.root_node)
 
 
     if(is_debug):
