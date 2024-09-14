@@ -31,14 +31,19 @@ class Dataset:
 class dTreeModel:
     def __init__(self) -> None:
         self.root_node = None
+        self.feature_map = {} #map['feature_name'] = index
 
     def expCalc(self, p: float) -> float:
         return 0 if p == 0 else p*np.log2(p) 
 
     def evaluateEntropy(self, y: []) -> float:
         total_y = len(y)
-        p_y1 = np.sum(y == 1)/total_y
-        p_y0 = np.sum(y == 0)/total_y
+        if total_y != 0:
+            p_y1 = np.sum(y == 1)/total_y
+            p_y0 = np.sum(y == 0)/total_y
+        else:
+            p_y1 = 0
+            p_y0 = 0
 
         return -(self.expCalc(p_y0) + self.expCalc(p_y1))
 
@@ -52,8 +57,6 @@ class dTreeModel:
         largest_index = 0
         total_data_num = len(data_y)
         H_Y = self.evaluateEntropy(data_y)
-        print(f"---> Dv.feature = {Dv.feature}")
-        print(f"H_Y = {H_Y}")
         for index_column, x in enumerate(data_x_feature_name):
             H_YX = 0
             for x_v in (0, 1): #traverse all value in x column (feature)
@@ -62,7 +65,6 @@ class dTreeModel:
                 H_YX += len(index)/total_data_num*H_condY
 
             mutual_info = H_Y - H_YX
-            print(f"index_column = {index_column}, mutual_info = {mutual_info}")
             if mutual_info > 0 and mutual_info > largest_mutial_info:
                 largest_mutial_info = mutual_info
                 largest_index = index_column
@@ -70,8 +72,6 @@ class dTreeModel:
         return (largest_index, data_x_feature_name[largest_index])
 
     def nodeSplit(self, Dv: Dataset, depth: int) -> Node:
-        print(f"depth = {depth}")
-        print(f"Dv.feature = {Dv.feature}")
         current_node = Node()
         current_node.depth = depth
         current_node.y_stat0 = np.sum(Dv.data_y==0)
@@ -119,7 +119,27 @@ class dTreeModel:
 
     def train(self, data_x_feature_name:[], data_x: NDArray[Tuple[Any, Any]], data_y:NDArray[Tuple[Any]]) -> None:
         Dv = Dataset(data_x_feature_name, data_x, data_y)
+        self.feature_map = {x: index for index, x in enumerate(data_x_feature_name)}
         self.root_node = self.nodeSplit(Dv, 0)
+
+    def hx(self, x: NDArray[Tuple[Any]]) -> [[]]:
+        current_node = self.root_node
+        while True:
+            if current_node.attr is None: #leaf node
+                return current_node.vote
+            else:
+                if x[self.feature_map[current_node.attr[1]]] == 0:
+                    current_node = current_node.left
+                else:
+                    current_node = current_node.right
+
+    def predict(self, x_test: NDArray[Tuple[Any, Any]]) -> NDArray[Tuple[Any, Any]]:
+        y_head = np.zeros((x_test.shape[0], 1), dtype=int)
+        for index, x_inst in enumerate(x_test):
+            y_head[index] = self.hx(x_inst)
+
+        return y_head
+
 
 class MajorityVoteModel:
     def __init__(self) -> None:
@@ -160,25 +180,25 @@ def print_tree(node: Node, f):
         return
 
     print_sentence = f"[{node.y_stat0} 0/{node.y_stat1} 1]"
-    print(print_sentence)
+    #print(print_sentence)
     f.write(print_sentence+'\n')
     if node.attr is not None:
         print_sentence = f"{(node.depth+1)*'| '}"
-        print(print_sentence, end='')
+        #print(print_sentence, end='')
         f.write(print_sentence)
 
         print_sentence = f"{node.attr[1]} == 0: "
-        print(print_sentence, end='')
+        #print(print_sentence, end='')
         f.write(print_sentence)
 
         print_tree(node.left, f)
     if node.attr is not None:
         print_sentence = f"{(node.depth+1)*'| '}"
-        print(print_sentence, end='')
+        #print(print_sentence, end='')
         f.write(print_sentence)
 
         print_sentence = f"{node.attr[1]} == 1: "
-        print(print_sentence, end='')
+        #print(print_sentence, end='')
         f.write(print_sentence)
 
         print_tree(node.right, f)
@@ -192,6 +212,29 @@ def readData(input_file: str) -> ([], {}, [], []):
     data_x = np.array([[int(x_element) for x_element in x[0:-1]] for x in data[1:, :]])
     data_y = np.array([int(y_element) for y_element in data[1:, -1]])
     return data_x_feature_name, data_x, data_y
+
+def writeOutFile(output_file: str, output_content_arr: []) -> None :
+    with open(output_file, 'w') as f:
+        for data_line in output_content_arr:
+            f.write(f"{data_line[0]}\n")
+
+def writeOutMetrix(output_file: str, error_train: float, error_test: float) -> None:
+    with open(output_file, 'w') as f:
+        f.write(f"error(train): {error_train}\n")
+        f.write(f"error(test): {error_test}\n")
+
+def evaluateMetrixAccuracy(gt_y: [], pd_y: [[]]) -> float:
+    len_gt_y = len(gt_y)
+    len_pd_y = len(pd_y)
+    if len_gt_y != len_pd_y:
+        print(f"Error: length of gt_y, {len_gt_y}, deos not equal to length of pd_y, {len_pd_y}.")
+
+    cnt_err = 0
+    for index, true_y in enumerate(gt_y):
+        if true_y != pd_y[index][0]:
+            cnt_err += 1
+
+    return cnt_err/len_gt_y
 
 if __name__ == '__main__':
     # Initialize arguments
@@ -257,6 +300,22 @@ if __name__ == '__main__':
     if is_debug: print(f"> print_tree()...")
     with open(print_out, mode='w') as f:
         print_tree(model.root_node, f)
+
+    # Predicting.
+    if is_debug: print(f"> dTreeModel.predict()...")
+    predict_train_x = model.predict(data_x_train)
+    predict_test_x = model.predict(data_x_test)
+
+    # Evaluating.
+    if is_debug: print(f"> evaluateMetrixAccuracy()...")
+    error_train = evaluateMetrixAccuracy(data_y_train, predict_train_x)
+    error_test = evaluateMetrixAccuracy(data_y_test, predict_test_x)
+
+    # WriteOut.
+    if is_debug: print(f"> writeOutFile()...")
+    writeOutFile(train_out, predict_train_x)
+    writeOutFile(test_out, predict_test_x)
+    writeOutMetrix(metrics_out, error_train, error_test)
 
 
     if(is_debug):
