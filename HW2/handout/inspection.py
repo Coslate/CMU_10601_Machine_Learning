@@ -13,29 +13,29 @@ import sys
 #########################
 def main():
     #Process the argument
-    print(f"> argumentParser...")
+    #print(f"> argumentParser...")
     (in_file, out_file, is_debug) = argumentParser()
 
     # Read input data.
-    print(f"> readData()...")
+    if is_debug: print(f"> readData()...")
     train_x, train_y = readData(in_file)
 
     # Training.
-    print(f"> MajorityVoteModel.train()...")
+    if is_debug: print(f"> MajorityVoteModel.train()...")
     model = MajorityVoteModel()
     model.train(train_x, train_y)
 
     # Predicting.
-    print(f"> MajorityVoteModel.predict()...")
+    if is_debug: print(f"> MajorityVoteModel.predict()...")
     predict_train_x = model.predict(train_x)
 
     # Evaluating.
-    print(f"> evaluateMetrixAccuracy()...")
+    if is_debug: print(f"> evaluateMetrixAccuracy()...")
     error = evaluateMetrixAccuracy(train_y, predict_train_x)
     entropy = evaluateEntropy(train_y)
 
     # WriteOut.
-    print(f"> writeOutFile()...")
+    if is_debug: print(f"> writeOutFile()...")
     writeOutMetrix(out_file, [entropy, error], ['entropy', 'error'])
 
     if(is_debug):
