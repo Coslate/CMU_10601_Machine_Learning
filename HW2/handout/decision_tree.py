@@ -187,7 +187,7 @@ def print_tree(node: Node, f):
         #print(print_sentence, end='')
         f.write(print_sentence)
 
-        print_sentence = f"{node.attr[1]} == 0: "
+        print_sentence = f"{node.attr[1]} = 0: "
         #print(print_sentence, end='')
         f.write(print_sentence)
 
@@ -197,7 +197,7 @@ def print_tree(node: Node, f):
         #print(print_sentence, end='')
         f.write(print_sentence)
 
-        print_sentence = f"{node.attr[1]} == 1: "
+        print_sentence = f"{node.attr[1]} = 1: "
         #print(print_sentence, end='')
         f.write(print_sentence)
 
