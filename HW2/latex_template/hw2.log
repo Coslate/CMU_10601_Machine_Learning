@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  15 SEP 2024 03:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  15 SEP 2024 03:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1849,76 +1849,72 @@ Package pdftex.def Info: heart.png  used on input line 979.
  <./heart.png>] [12
 
 ]
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 1
-052.
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1056
+[][][]$\OT1/pcr/m/n/10 https : / / stackoverflow . com / questions / 75495212 /
 
-(C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1052.
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
-[][][]$\OT1/pcr/m/n/10.95 https : / / stackoverflow . com / questions / 2894710
- /
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
+[][][]$\OT1/pcr/m/n/10 https : / / stackoverflow . com / questions / 67392824 /
+
  []
 
 [13
 
 
 ] [14]
-Overfull \hbox (21.89998pt too wide) in paragraph at lines 1104--1105
+Overfull \hbox (21.89998pt too wide) in paragraph at lines 1105--1106
 [][] 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
-117.
+118.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Overfull \hbox (21.89998pt too wide) in paragraph at lines 1150--1151
+Overfull \hbox (21.89998pt too wide) in paragraph at lines 1151--1152
 [][] 
  []
 
 [15]
-Overfull \hbox (21.89998pt too wide) in paragraph at lines 1185--1186
+Overfull \hbox (21.89998pt too wide) in paragraph at lines 1186--1187
 [][] 
  []
 
 [16
 
 ]
-Overfull \hbox (3.22717pt too wide) in paragraph at lines 1197--1200
+Overfull \hbox (3.22717pt too wide) in paragraph at lines 1198--1201
 []\OT1/ptm/m/n/10.95 Where above [][][][][] is a place-holder for seven command
 -line ar-gu-ments: \OT1/pcr/m/n/10.95 <train input> <test
  []
 
 
-Overfull \hbox (2.49571pt too wide) in paragraph at lines 1197--1200
+Overfull \hbox (2.49571pt too wide) in paragraph at lines 1198--1201
 \OT1/pcr/m/n/10.95 input> <max depth> <train out> <test out> <metrics out> <pri
 nt out>\OT1/ptm/m/n/10.95 . These
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1
-228.
+229.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1228.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1229.
 
  [17
 
 ] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1301
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1302
 
  []
 
 
-Overfull \hbox (21.89998pt too wide) in paragraph at lines 1329--1330
+Overfull \hbox (21.89998pt too wide) in paragraph at lines 1330--1331
 [][] 
  []
 
@@ -1937,11 +1933,11 @@ Package rerunfilecheck Info: File `hw2.out' has not changed.
 (rerunfilecheck)             Checksum: B46EDF618BA7B12DEF0C869B93B1732A;2703.
  ) 
 Here is how much of TeX's memory you used:
- 40606 strings out of 474486
- 817170 string characters out of 5740416
+ 40592 strings out of 474486
+ 816851 string characters out of 5740416
  1984542 words of memory out of 5000000
- 61906 multiletter control sequences out of 15000+600000
- 612078 words of font info for 171 fonts, out of 8000000 for 9000
+ 61893 multiletter control sequences out of 15000+600000
+ 613671 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,87p,1194b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Patrick Chen\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi6
@@ -1969,9 +1965,9 @@ mes/utmb8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1
 /urw/times/utmbi8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fon
 ts/type1/urw/times/utmr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on hw2.pdf (20 pages, 1491890 bytes).
+Output written on hw2.pdf (20 pages, 1491910 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
+ 466 PDF objects out of 1000 (max. 8388607)
  178 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
 
