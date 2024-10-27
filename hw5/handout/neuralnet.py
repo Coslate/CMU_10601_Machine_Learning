@@ -21,6 +21,7 @@ hinting syntax, see https://docs.python.org/3/library/typing.html.
 import numpy as np
 import argparse
 from typing import Callable, List, Tuple
+import matplotlib.pyplot as plt
 
 # This takes care of command line argument parsing for you!
 # To access a specific argument, simply access args.<argument name>.
@@ -43,6 +44,12 @@ parser.add_argument('init_flag', type=int, choices=[1, 2],
                     help='weight initialization functions, 1: random')
 parser.add_argument('learning_rate', type=float,
                     help='learning rate')
+parser.add_argument("--plotfig", type=int, default=0,
+                    help='show figures.')
+parser.add_argument("--print_weight", type=int, default=0,
+                    help='print weights.')
+parser.add_argument("--plot2hiddenlayer", type=int, default=0,
+                    help='print weights.')
 
 
 def args2data(args) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray,
@@ -74,6 +81,9 @@ str, str, str, int, int, int, float]:
     n_hid = args.hidden_units
     init_flag = args.init_flag
     lr = args.learning_rate
+    plotfig = args.plotfig
+    print_weight = args.print_weight
+    plot2hiddenlayer = args.plot2hiddenlayer
 
     X_tr = np.loadtxt(args.train_input, delimiter=',')
     y_tr = X_tr[:, 0].astype(int)
@@ -84,7 +94,7 @@ str, str, str, int, int, int, float]:
     X_te = X_te[:, 1:]  # cut off label column
 
     return (X_tr, y_tr, X_te, y_te, out_tr, out_te, out_metrics,
-            n_epochs, n_hid, init_flag, lr)
+            n_epochs, n_hid, init_flag, lr, plotfig, print_weight, plot2hiddenlayer)
 
 
 def shuffle(X, y, epoch):
@@ -347,6 +357,37 @@ class NN:
         self.linear1 = self.Linear1
         self.linear2 = self.Linear2
 
+        self.Linear1_2hiddenlayer  = Linear(input_size, hidden_size, weight_init_fn, learning_rate)
+        self.Sigmoid1_2hiddenlayer = Sigmoid()
+        self.Linear2_2hiddenlayer  = Linear(hidden_size, hidden_size, weight_init_fn, learning_rate)
+        self.Sigmoid2_2hiddenlayer = Sigmoid()
+        self.Linear3_2hiddenlayer  = Linear(hidden_size, output_size, weight_init_fn, learning_rate)
+        self.SoftMax_2hiddenlayer  = SoftMaxCrossEntropy()
+
+
+
+    def forward_2hiddenlayer(self, x: np.ndarray, y: int) -> Tuple[np.ndarray, float]:
+        """
+        Neural network forward computation. 
+        Follow the pseudocode!
+        :param x: input data point *without the bias folded in*
+        :param y: prediction with shape (num_classes,)
+        :return:
+            y_hat: output prediction with shape (num_classes,). This should be
+                a valid probability distribution over the classes.
+            loss: the cross_entropy loss for a given example
+        """
+        # TODO: call forward pass for each layer
+        a1 = self.Linear1_2hiddenlayer.forward(x)
+        z1 = self.Sigmoid1_2hiddenlayer.forward(a1)
+
+        a2 = self.Linear2_2hiddenlayer.forward(z1)
+        z2 = self.Sigmoid2_2hiddenlayer.forward(a2)
+
+        b = self.Linear3_2hiddenlayer.forward(z2)
+        y_hat, J = self.SoftMax_2hiddenlayer.forward(b, y)
+        return y_hat, J
+
     def forward(self, x: np.ndarray, y: int) -> Tuple[np.ndarray, float]:
         """
         Neural network forward computation. 
@@ -365,6 +406,23 @@ class NN:
         y_hat, J = self.SoftMax.forward(b, y)
         return y_hat, J
 
+    def backward_2hiddenlayer(self, y: int, y_hat: np.ndarray) -> None:
+        """
+        Neural network backward computation.
+        Follow the pseudocode!
+        :param y: label (a number or an array containing a single element)
+        :param y_hat: prediction with shape (num_classes,)
+        """
+        # TODO: call backward pass for each layer
+        gb = self.SoftMax_2hiddenlayer.backward(y, y_hat)
+        gz2 = self.Linear3_2hiddenlayer.backward(gb)
+
+        ga2 = self.Sigmoid2_2hiddenlayer.backward(gz2)
+        gz1 = self.Linear2_2hiddenlayer.backward(ga2)
+
+        ga1 = self.Sigmoid1_2hiddenlayer.backward(gz1)
+        gx = self.Linear1_2hiddenlayer.backward(ga1)
+
 
     def backward(self, y: int, y_hat: np.ndarray) -> None:
         """
@@ -379,6 +437,15 @@ class NN:
         ga = self.Sigmoid1.backward(gz)
         gx = self.Linear1.backward(ga)
 
+    def step_2hiddenlayer(self):
+        """
+        Apply SGD update to weights.
+        """
+        # TODO: call step for each relevant layer
+        self.Linear1_2hiddenlayer.step()
+        self.Linear2_2hiddenlayer.step()
+        self.Linear3_2hiddenlayer.step()
+
     def step(self):
         """
         Apply SGD update to weights.
@@ -386,6 +453,21 @@ class NN:
         # TODO: call step for each relevant layer
         self.Linear1.step()
         self.Linear2.step()
+
+    def compute_loss_2hiddenlayer(self, X: np.ndarray, y: np.ndarray) -> float:
+        """
+        Compute nn's average (cross entropy) loss over the dataset (X, y)
+        :param X: Input dataset of shape (num_points, input_size)
+        :param y: Input labels of shape (num_points,)
+        :return: Mean cross entropy loss
+        """
+        # TODO: compute loss over the entire dataset
+        #  Hint: reuse your forward function
+        J = []
+        for i in range(y.shape[0]):
+            y_hat, Ji = self.forward_2hiddenlayer(X[i], y[i])
+            J.append(Ji)
+        return np.mean(J)
 
 
     def compute_loss(self, X: np.ndarray, y: np.ndarray) -> float:
@@ -403,9 +485,9 @@ class NN:
             J.append(Ji)
         return np.mean(J)
 
-    def train(self, X_tr: np.ndarray, y_tr: np.ndarray,
+    def train_2hiddenlayer(self, X_tr: np.ndarray, y_tr: np.ndarray,
               X_test: np.ndarray, y_test: np.ndarray,
-              n_epochs: int) -> Tuple[List[float], List[float]]:
+              n_epochs: int, print_weight=False) -> Tuple[List[float], List[float]]:
         """
         Train the network using SGD for some epochs.
         :param X_tr: train data
@@ -420,13 +502,60 @@ class NN:
         # TODO: train network
         w_shape0 = (self.hidden_size, self.input_size)
         w_shape1 = (self.output_size, self.hidden_size)
-        self.weight_init_fn(w_shape0)
-        self.weight_init_fn(w_shape1)
+        #self.weight_init_fn(w_shape0)
+        #self.weight_init_fn(w_shape1)
         J_train = []
         J_test = []
 
         for epoch_num in range(n_epochs):
-            X_shuffled, y_shuffled = shuffle(X_tr, y_tr)
+            X_shuffled, y_shuffled = shuffle(X_tr, y_tr, epoch_num)
+
+            for i, X_input in enumerate(X_shuffled):
+                y_input = y_shuffled[i]
+                y_hat, Ji = self.forward_2hiddenlayer(X_input, y_input)
+                self.backward_2hiddenlayer(y_input, y_hat)
+                self.step_2hiddenlayer()
+            J_train_i = self.compute_loss_2hiddenlayer(X_tr, y_tr)
+            J_test_i = self.compute_loss_2hiddenlayer(X_test, y_test)
+
+            J_train.append(J_train_i)
+            J_test.append(J_test_i)
+
+        return J_train, J_test
+
+    def train(self, X_tr: np.ndarray, y_tr: np.ndarray,
+              X_test: np.ndarray, y_test: np.ndarray,
+              n_epochs: int, print_weight=False) -> Tuple[List[float], List[float]]:
+        """
+        Train the network using SGD for some epochs.
+        :param X_tr: train data
+        :param y_tr: train label
+        :param X_test: train data
+        :param y_test: train label
+        :param n_epochs: number of epochs to train for
+        :return:
+            train_losses: Training losses *after* each training epoch
+            test_losses: Test losses *after* each training epoch
+        """
+        # TODO: train network
+        w_shape0 = (self.hidden_size, self.input_size)
+        w_shape1 = (self.output_size, self.hidden_size)
+        #self.weight_init_fn(w_shape0)
+        #self.weight_init_fn(w_shape1)
+        J_train = []
+        J_test = []
+
+        for epoch_num in range(n_epochs):
+            if print_weight:
+                if epoch_num == 0 or epoch_num == 1 or epoch_num == 2 or epoch_num == 3:
+                    np.set_printoptions(linewidth = 400)
+                    print(f"epoch_num = {epoch_num}")
+                    print(f"alpha.shape = {self.Linear1.w.shape}")
+                    print(f"alpha = {self.Linear1.w}")
+                    print(f"beta.shape = {self.Linear2.w.shape}")
+                    print(f"beta = {self.Linear2.w}")
+
+            X_shuffled, y_shuffled = shuffle(X_tr, y_tr, epoch_num)
 
             for i, X_input in enumerate(X_shuffled):
                 y_input = y_shuffled[i]
@@ -462,6 +591,106 @@ class NN:
 
         return labels, err_cnt/float(y.shape[0])
 
+def runPrintWeights(X_tr, y_tr, X_val, y_val, hidden_units, n_epochs, lr):
+    weight_init_fn_plot = zero_init
+
+    nnplot = NN(
+        input_size=X_tr.shape[-1],
+        hidden_size=hidden_units,
+        output_size=len(labels),
+        weight_init_fn=weight_init_fn_plot,
+        learning_rate=lr
+    )
+
+    train_losses, val_losses = nnplot.train(X_tr, y_tr, X_val, y_val, n_epochs, print_weight=True)
+
+def runPlotLearningRates_2hiddenLayer(X_tr, y_tr, X_val, y_val, hidden_units, n_epochs, lr):
+    weight_init_fn_plot = random_init
+    train_loss_plot = []
+    val_loss_plot = []
+
+    nnplot = NN(
+        input_size=X_tr.shape[-1],
+        hidden_size=hidden_units,
+        output_size=len(labels),
+        weight_init_fn=weight_init_fn_plot,
+        learning_rate=lr
+    )
+
+    train_losses, val_losses = nnplot.train(X_tr, y_tr, X_val, y_val, n_epochs)
+    train_losses_2hiddenlayer, val_losses_2hiddenlayer = nnplot.train_2hiddenlayer(X_tr, y_tr, X_val, y_val, n_epochs)
+
+    # Plot 1-hidden-layer model
+    plt.plot(np.arange(n_epochs), train_losses, label="1 Hidden Layer - Training Loss", color="blue", linestyle='-')
+    plt.plot(np.arange(n_epochs), val_losses, label="1 Hidden Layer - Validation Loss", color="blue", linestyle='--')
+
+    # Plot 2-hidden-layer model
+    plt.plot(np.arange(n_epochs), train_losses_2hiddenlayer, label="2 Hidden Layers - Training Loss", color="orange", linestyle='-')
+    plt.plot(np.arange(n_epochs), val_losses_2hiddenlayer, label="2 Hidden Layers - Validation Loss", color="orange", linestyle='--')
+
+    # Labels and title
+    plt.xlabel("Epoch Number")
+    plt.ylabel("Average Cross-Entropy Loss")
+    plt.title("1 vs 2 Hidden Layers on Training and Validation Loss")
+    plt.legend()
+    plt.grid(True)
+    plt.show()    
+
+
+def runPlotLearningRates(X_tr, y_tr, X_val, y_val, hidden_units, n_epochs, lr):
+    weight_init_fn_plot = random_init
+    train_loss_plot = []
+    val_loss_plot = []
+
+    nnplot = NN(
+        input_size=X_tr.shape[-1],
+        hidden_size=hidden_units,
+        output_size=len(labels),
+        weight_init_fn=weight_init_fn_plot,
+        learning_rate=lr
+    )
+
+    train_losses, val_losses = nnplot.train(X_tr, y_tr, X_val, y_val, n_epochs)
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.arange(n_epochs), train_losses, label="Training Loss")
+    plt.plot(np.arange(n_epochs), val_losses, label="Validation Loss")
+    plt.xlabel("Number of Epochs")
+    plt.ylabel("Average Cross-Entropy Loss")
+    plt.title("Training and Validation Loss vs Number of Epochs")
+    plt.legend()
+    plt.show()
+
+def runPlotHiddenUnits(X_tr, y_tr, X_val, y_val, n_epochs):
+    weight_init_fn_plot = random_init
+    lr = 0.001
+    train_loss_plot = []
+    val_loss_plot = []
+    hidden_units_list = [5, 20, 50, 100, 200]
+
+
+    for n_hid in hidden_units_list:
+        nnplot = NN(
+            input_size=X_tr.shape[-1],
+            hidden_size=n_hid,
+            output_size=len(labels),
+            weight_init_fn=weight_init_fn_plot,
+            learning_rate=lr
+        )
+        train_losses, val_losses = nnplot.train(X_tr, y_tr, X_val, y_val, n_epochs)
+        train_loss_plot.append(train_losses[-1])
+        val_loss_plot.append(val_losses[-1])
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(hidden_units_list, train_loss_plot, label="Training Loss")
+    plt.plot(hidden_units_list, val_loss_plot, label="Validation Loss")
+    plt.xlabel("Number of Hidden Units")
+    plt.ylabel("Average Cross-Entropy Loss")
+    plt.title("Training and Validation Loss vs Number of Hidden Units")
+    plt.legend()
+    plt.show()
+
+
 if __name__ == "__main__":
     args = parser.parse_args()
     # Note: You can access arguments like learning rate with args.learning_rate
@@ -475,7 +704,7 @@ if __name__ == "__main__":
     # See the docstring of `args2data` for an explanation of 
     # what is being returned.
     (X_tr, y_tr, X_test, y_test, out_tr, out_te, out_metrics,
-     n_epochs, n_hid, init_flag, lr) = args2data(args)
+     n_epochs, n_hid, init_flag, lr, plotfig, print_weight, plot2hiddenlayer) = args2data(args)
 
     nn = NN(
         input_size=X_tr.shape[-1],
@@ -514,3 +743,14 @@ if __name__ == "__main__":
                 cur_epoch, cur_te_loss))
         f.write("error(train): {}\n".format(train_error_rate))
         f.write("error(validation): {}\n".format(test_error_rate))
+
+    if plotfig:
+        runPlotHiddenUnits(X_tr, y_tr, X_test, y_test, n_epochs=100)
+        runPlotLearningRates(X_tr, y_tr, X_test, y_test, 50, 100, 0.03)
+        runPlotLearningRates(X_tr, y_tr, X_test, y_test, 50, 100, 0.003)
+        runPlotLearningRates(X_tr, y_tr, X_test, y_test, 50, 100, 0.0003)
+    if print_weight:
+        runPrintWeights(X_tr, y_tr, X_test, y_test, n_hid, 100, lr)
+
+    if plot2hiddenlayer:
+        runPlotLearningRates_2hiddenLayer(X_tr, y_tr, X_test, y_test, 50, 100, 0.003)
