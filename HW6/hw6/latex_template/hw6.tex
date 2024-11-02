@@ -812,7 +812,7 @@ $$N = O\left(\frac{1}{\epsilon^2} \left[\vcdim + \log \frac{1}{\delta} \right] \
 \begin{parts}
     \part[1] \textbf{True or False:} Suppose you place a Beta prior over the Bernoulli distribution, and attempt to learn the parameter $\theta$ of the Bernoulli distribution from data. Further suppose an adversary chooses ``bad'' but finite hyperparameters for your Beta prior in order to confuse your learning algorithm. As the number of training examples grows to infinity, the MAP estimate of $\theta$ can still converge to the MLE estimate of $\theta$.
     \begin{checkboxes}
-        \choice True
+        \CorrectChoice True
         \choice False
     \end{checkboxes}
     
@@ -836,6 +836,7 @@ $$N = O\left(\frac{1}{\epsilon^2} \left[\vcdim + \log \frac{1}{\delta} \right] \
     What is the MAP estimate of $\gamma$ given $Y=\frac{2}{3}$ is observed? \\
     \begin{your_solution}[width=4cm,height=2cm]
         % YOUR ANSWER 
+        $\gamma$ = 1
     \end{your_solution}
     
     
@@ -849,9 +850,11 @@ $$N = O\left(\frac{1}{\epsilon^2} \left[\vcdim + \log \frac{1}{\delta} \right] \
     
     \begin{your_solution}[title=MLE of $\theta$,width=4cm,height=2cm]
         % Your answer for MLE
+        0.75
     \end{your_solution}
     \begin{your_solution}[title=MAP of $\theta$,width=4cm,height=2cm]
         % Your answer for MAP
+        0.5
     \end{your_solution}
     
 \end{parts}\newpage
@@ -909,6 +912,7 @@ Neural works for the Bank of ML and is given the following dataset from another 
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    0.4
     \end{your_solution}
 
     \newpage
@@ -916,24 +920,28 @@ Neural works for the Bank of ML and is given the following dataset from another 
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    0.4
     \end{your_solution}
 
     \subpart[1] What is the training error rate for region B?
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    0.4
     \end{your_solution}
 
     \subpart[1] How many false positives were there in region A?
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    3
     \end{your_solution}
 
     \subpart[1] How many false negatives were there in region A?
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    1
     \end{your_solution}
 
 
@@ -941,12 +949,14 @@ Neural works for the Bank of ML and is given the following dataset from another 
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    1
     \end{your_solution}
 
     \subpart[1] How many false negatives were there in region B?
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    3
     \end{your_solution}
     
 \end{subparts}
@@ -955,54 +965,61 @@ Neural works for the Bank of ML and is given the following dataset from another 
 \part[2] \textbf{True or False}: Using your responses to the previous question, we achieve statistical parity between regions A and B. Justify your answer. 
     \begin{checkboxes}
         \choice True
-        \choice False
+        \CorrectChoice False
     \end{checkboxes}
 
     \begin{your_solution}[width = \linewidth,height=4cm]
     %YOUR ANSWER
+    The selection rate (portion of positive prediction instance) of region A is 70\%, while the selection rate of region B is only 30\%. So, we do not achieve statistical parity between region A and B.
     \end{your_solution}
 
 \part[2] \textbf{True or False}: We achieve equality of accuracy between regions A and B. Justify your answer. 
     \begin{checkboxes}
-        \choice True
+        \CorrectChoice True
         \choice False
     \end{checkboxes}
 
     \begin{your_solution}[width = \linewidth,height=4cm]
     %YOUR ANSWER
+    The accuracy of region A is 60\%, and the accuracy of region B is also 60\%. So, we do achieve the equality of accuracy between region A and B.
     \end{your_solution}
 
 \part[2] \textbf{True or False}: We achieve equality of FPR/FNR between regions A and B. Justify your answer. 
     \begin{checkboxes}
         \choice True
-        \choice False
+        \CorrectChoice False
     \end{checkboxes}
 
     \begin{your_solution}[width = \linewidth,height=4cm]
     %YOUR ANSWER
+    The FPR of region A is 60\%, and  the FNR of region A is 20\%. On the other hand, the FPR of region B is 20\%, and  the FNR of region B is 60\%. As the result, we do not achiece equality of FPR/FNR between regions A and B. 
     \end{your_solution}
 
 \newpage
 \part[2] \textbf{True or False}: We achieve equality of PPV/NPV between regions A and B. Justify your answer. 
     \begin{checkboxes}
         \choice True
-        \choice False
+        \CorrectChoice False
     \end{checkboxes}
 
     \begin{your_solution}[width = \linewidth,height=4cm]
     %YOUR ANSWER
+    The PPV of region A is $\frac{4}{7}$, and the NPV of region A is $\frac{2}{3}$. On the other hand, the PPV of region B is $\frac{2}{3}$, and the NPV of region B is $\frac{4}{7}$. So, we do not achieve equality of PPV/NPV between regions A and B.
     \end{your_solution}
 
 \part[3] Using your responses from the previous questions, comment on the fairness of this model between cities A and B.
 
     \begin{your_solution}[width = \linewidth,height=4cm]
     %YOUR ANSWER
+    The model does not achieve Independence(statistical parity), Separation (equality of FPR/FNR), and Sufficiency (equality of PPV/NPV). Accordingly, the model is not fair between cities A and B.
     \end{your_solution}
 
 \part[3] A Type I error occurs when you erroneously predict a positive label (false positive), and a Type II error is when you erroneously predict a negative label (false negative). Compare and contrast the consequences of making a Type I error and Type II error in this setting. Which would cause more significant consequences?
 
     \begin{your_solution}[width = \linewidth,height=4cm]
     %YOUR ANSWER
+    \footnotesize
+    Type I error (false positive) means you \textbf{wrongly} give a person the loan. The consequence is that there would be a huge risk that the bank would lose its money, as the person may not be able to repay it. On the other hand, the Type II error (false negative) means that you reject to give loan to an applicant who is actually qualified. The consequence is that the bank may loss the profit from interest payments. I think the false positive one would have more significant consequence because the bank would directly loss its capitals due to unpaid loans, while the false negative would only cause the bank to lose its opportunity to earn more money. However, to the perspective of the applicants, the false negative one would have more significant consequence, as he/she would loss the opportunity to buy a house, start a business or do something they want.
     \end{your_solution}
 
 \end{parts}\newpage
@@ -1035,7 +1052,7 @@ Answer the following questions with respect to the above hypothetical context an
     \choice False Positive Rate (FPR) parity
     \choice Negative Predictive Value (NPV) parity
     \choice Positive Predictive Value (PPV) parity
-    \choice Error parity 
+    \CorrectChoice Error parity 
     \choice Statistical parity (or Selection rate parity)
     \choice None of the above
 \end{checkboxes}
@@ -1048,11 +1065,11 @@ Answer the following questions with respect to the above hypothetical context an
 \part[2] \textbf{Select all that apply:} Which of the above notions of fairness would be satisfied if the ML team could train a model with 0 true error (i.e., a model that always predicts the correct label for every patient)?
 \checkboxchar{$\Box$} \checkedchar{$\blacksquare$}
 \begin{checkboxes}
-    \choice False Negative Rate (FNR) parity
-    \choice False Positive Rate (FPR) parity
-    \choice Negative Predictive Value (NPV) parity
-    \choice Positive Predictive Value (PPV) parity
-    \choice Error parity 
+    \CorrectChoice False Negative Rate (FNR) parity
+    \CorrectChoice False Positive Rate (FPR) parity
+    \CorrectChoice Negative Predictive Value (NPV) parity
+    \CorrectChoice Positive Predictive Value (PPV) parity
+    \CorrectChoice Error parity 
     \choice Statistical parity (or Selection rate parity)
     \choice None of the above
 \end{checkboxes}
@@ -1062,12 +1079,12 @@ Answer the following questions with respect to the above hypothetical context an
 
 \checkboxchar{$\Box$} \checkedchar{$\blacksquare$}
 \begin{checkboxes}
-    \choice False Negative Rate (FNR) parity
-    \choice False Positive Rate (FPR) parity
+    \CorrectChoice False Negative Rate (FNR) parity
+    \CorrectChoice False Positive Rate (FPR) parity
     \choice Negative Predictive Value (NPV) parity
     \choice Positive Predictive Value (PPV) parity
     \choice Error parity 
-    \choice Statistical parity (or Selection rate parity)
+    \CorrectChoice Statistical parity (or Selection rate parity)
     \choice None of the above
 \end{checkboxes}
 
@@ -1076,7 +1093,7 @@ Answer the following questions with respect to the above hypothetical context an
 \part[2] From the perspective of a patient subject to the predictions made by this model, the violation of which of the parity conditions below would be most problematic? Justify your answer.
 \checkboxchar{$\circle$} \checkedchar{$\blackcircle$}
 \begin{checkboxes}
-    \choice False Negative Rate (FNR) parity
+    \CorrectChoice False Negative Rate (FNR) parity
     \choice False Positive Rate (FPR) parity
     \choice Negative Predictive Value (NPV) parity
     \choice Positive Predictive Value (PPV) parity
@@ -1085,14 +1102,18 @@ Answer the following questions with respect to the above hypothetical context an
     \choice None of the above
 \end{checkboxes}
 
-    \begin{your_solution}[width = \linewidth,height=5cm]
+\begin{your_solution}[width = \linewidth,height=5cm]
     %YOUR ANSWER
+    The False Negative Rate (FNR) means the portion of patients that truly need hospital care but be predicted as negative, which may lead to serious consequence on the health of these patients. The disparity of FNR means some groups have higher FNR, meaning that the group may have more people suffer from the FNR disparity bias of the model, causing their risk on not being able to recover from illness due to no hospitalization.
+    
 \end{your_solution}
 
 \part[2] \textbf{Causes of unfairness:}  Name one potential cause of disparity in false negative rates across the two groups in the above context.
 
     \begin{your_solution}[width = \linewidth,height=5cm]
     %YOUR ANSWER
+    \small
+    I think one potential cause is the feature that the model use, like age and prior utilization of medical insurance, is insufficient to identify all patients in different groups who need hospitalization. For example, assuming that a model considers a person needs more care if he uses more health insurance, and a young and poor person may not have enough money to have medical insurance, then the model may decide that the person does not need hospitalization, while the person may already be infected and indeed needs health care. On the other hand, a rich family may have constant check-up that misleads the model to decide they need more cares. As the model does not have the ability to discover the truly high-risk group, such as old or lower-income patients, they may be neglected and cause the high False Negative Rate and thus the disparity over groups.
     \end{your_solution}
 
 \newpage
@@ -1156,6 +1177,7 @@ Suppose our hypothesis class is the class of all linear separators defined over 
 
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    (60, 2)
     \end{your_solution}
     
 
@@ -1163,8 +1185,8 @@ Suppose our hypothesis class is the class of all linear separators defined over 
     \textbf{Note:} Look at the LaTeX comments for instructions on how to redraw the decision boundry.
 
     %YOUR ANSWER (Change the following 4 values to specify the slope of the line)
-    \def\xone{40}   % Change me! Coordinate 1 x_1 value
-    \def\yone{3}    % Change me! Coordinate 1 x_2 value
+    \def\xone{60}   % Change me! Coordinate 1 x_1 value
+    \def\yone{1}    % Change me! Coordinate 1 x_2 value
     \def\xtwo{20}   % Change me! Coordinate 2 x_1 value
     \def\ytwo{4}    % Change me! Coordinate 1 x_2 value
     
@@ -1218,6 +1240,7 @@ Suppose our hypothesis class is the class of all linear separators defined over 
     
     \begin{your_solution}[width = 4cm,height=2cm]
     %YOUR ANSWER
+    (40, 1)
     \end{your_solution}
 
 
@@ -1225,7 +1248,7 @@ Suppose our hypothesis class is the class of all linear separators defined over 
 
     \begin{checkboxes}
         \choice True 
-        \choice False
+        \CorrectChoice False
     \end{checkboxes}
     
 \end{subparts}
@@ -1239,18 +1262,43 @@ Suppose our hypothesis class is the class of all linear separators defined over 
 
     \begin{your_solution}[width = \linewidth,height=10cm]
     %YOUR ANSWER
+    We can verify the identity as the following: 
+    \tiny
+    \begin{align}
+		\frac{r_s}{1-r_s} &= \frac{(TP+FN)}{(FP+TN)}\\
+		(1-FNR_s) &= 1-\frac{FN}{(TP+FN)} = \frac{TP}{(TP+FN)} \\
+		\frac{(1-PPV_s)}{PPV_s} &= \frac{(1-TP/(TP+FP))}{TP/(TP+FP)} = \frac{FP/(TP+FP)}{TP/(TP+FP)} = \frac{FP}{TP} \\
+		\frac{r_s}{1-r_s} \times (1-FNR_s) \times \frac{(1-PPV_s)}{PPV_s} &= \frac{(TP+FN)}{(FP+TN)} \times  \frac{TP}{(TP+FN)} \times \frac{FP}{TP} \\
+		&= \frac{FP}{FP+TN} \\
+		&= FPR_s
+	\end{align}
+	\normalsize
+	As the result, the identity holds for any s $\in$ \{blue, red\}.
+   
     \end{your_solution}
 
     \subpart[4] Show that the expression from part (a) can be rewritten as $$1/r_s =1 + \frac{(1-FNR_s)}{FPR_s} \times \frac{(1-PPV_s)}{PPV_s} $$
 
     \begin{your_solution}[width = \linewidth,height=10cm]
     %YOUR ANSWER
+    We can show that expression in part(a) can be rewritten as the following:
+    \begin{align}
+		(1-r_s) FPR_s &= r_s \times (1-FNR_s) \times \frac{1-PPV_s}{PPV_s} \\
+		\frac{1-r_s}{r_s} &= \frac{(1-FNR_s)}{FPR_s} \times \frac{1-PPV_s}{PPV_s} \\
+		\frac{1}{r_s} &= 1 + \frac{(1-FNR_s)}{FPR_s} \times \frac{1-PPV_s}{PPV_s}
+	\end{align}    
     \end{your_solution}
 
     \subpart[4] Finally, using results from parts (a) and (b), show that if $FPR_s, FNR_s,$ and $PPV_s$ are equal for $s \in \{\text{blue}, \text{red}\}$, then $r_s$ must be equal for $s \in \{\text{blue}, \text{red}\}$, which is a contradiction.
 
     \begin{your_solution}[width = \linewidth,height=10cm]
     %YOUR ANSWER
+    From part(a) and part(b), we have the following equations:
+    \begin{align}
+	\frac{1}{r_s} &= 1 + \frac{(1-FNR_s)}{FPR_s} \times \frac{1-PPV_s}{PPV_s} \\
+	\rightarrow r_s &= \frac{1}{1 + \frac{(1-FNR_s)}{FPR_s} \times \frac{1-PPV_s}{PPV_s}}
+	\end{align}    
+	As the result, if we have same $FPR_s$, $FNR_s$ and $PPV_s$, then we would have the same $r_s$, for s $\in$ \{blue, red\}, which is a contradiction.
     \end{your_solution}
 \end{subparts}
 
@@ -1267,7 +1315,11 @@ After you have completed all other components of this assignment, report your an
 
 \begin{your_solution}[height=6cm]
 % YOUR ANSWER 
-
+\begin{enumerate}
+    \item No.
+	\item No.
+	\item No.
+\end{enumerate}	
 \end{your_solution}
 \end{questions}
 
