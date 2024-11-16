@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  22 SEP 2024 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  16 NOV 2024 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./hw3.tex
-(hw3.tex
+**./hw7.tex
+(hw7.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/exam\exam.cls
@@ -1786,42 +1786,38 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@roff=\dimen392
 ))
 LaTeX Font Info:    Trying to load font information for T1+txtt on input line 5
-19.
+40.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\t1txtt.f
 d
 File: t1txtt.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-57.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 6
+04.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-) (hw3.aux
+) (hw7.aux)
+\openout1 = `hw7.aux'.
 
-LaTeX Warning: Label `tab:knnimages' multiply defined.
-
-)
-\openout1 = `hw3.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 557.
-LaTeX Font Info:    ... okay on input line 557.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 604.
+LaTeX Font Info:    ... okay on input line 604.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1873,10 +1869,10 @@ LaTeX Font Info:    ... okay on input line 557.
 \makeMPintoPDFobject=\count468
 \everyMPtoPDFconversion=\toks82
 )
-Package hyperref Info: Link coloring ON on input line 557.
- (hw3.out) (hw3.out)
+Package hyperref Info: Link coloring ON on input line 604.
+ (hw7.out) (hw7.out)
 \@outlinefile=\write6
-\openout6 = `hw3.out'.
+\openout6 = `hw7.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
@@ -1892,44 +1888,44 @@ File: fc-english.def 2016/01/12
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 557.
+ on input line 604.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 595
+LaTeX Font Info:    Trying to load font information for U+msa on input line 606
 .
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 595
+LaTeX Font Info:    Trying to load font information for U+msb on input line 606
 .
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 59
-5.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 60
+6.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
-95.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
+06.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
-95.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
+06.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (21.89998pt too wide) in paragraph at lines 597--599
+Overfull \hbox (21.89998pt too wide) in paragraph at lines 606--607
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--599
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
@@ -1937,168 +1933,164 @@ Underfull \hbox (badness 10000) in paragraph at lines 597--599
 
 {C:/Users/Patrick Chen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Use
 rs/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
-[2
-
-]
-<images/checkerboard.png, id=53, 401.5pt x 401.5pt>
-File: images/checkerboard.png Graphic file (type png)
-<use images/checkerboard.png>
-Package pdftex.def Info: images/checkerboard.png  used on input line 737.
-(pdftex.def)             Requested size: 234.8775pt x 234.88573pt.
+[2]
+<figs/CNN.PNG, id=120, 715.473pt x 220.4235pt>
+File: figs/CNN.PNG Graphic file (type png)
+<use figs/CNN.PNG>
+Package pdftex.def Info: figs/CNN.PNG  used on input line 743.
+(pdftex.def)             Requested size: 429.28712pt x 132.2551pt.
  [3
 
- <./images/checkerboard.png (PNG copy)>] [4
+ <./figs/CNN.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 797--802
 
-]
-<images/dtree.png, id=78, 1190.94937pt x 686.565pt>
-File: images/dtree.png Graphic file (type png)
-<use images/dtree.png>
-Package pdftex.def Info: images/dtree.png  used on input line 778.
-(pdftex.def)             Requested size: 281.85587pt x 162.4847pt.
- [5
+ []
 
- <./images/dtree.png>]
-[6
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
-]
-<images/Q2_knn.png, id=97, 523.9575pt x 421.575pt>
-File: images/Q2_knn.png Graphic file (type png)
-<use images/Q2_knn.png>
-Package pdftex.def Info: images/Q2_knn.png  used on input line 860.
-(pdftex.def)             Requested size: 234.8775pt x 188.98009pt.
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 8
-66.
-
-(C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 866.
- [7
-
- <./images/Q2_knn.png>]
-<images/Q2_knn_test_point.png, id=111, 523.9575pt x 421.575pt>
-File: images/Q2_knn_test_point.png Graphic file (type png)
-<use images/Q2_knn_test_point.png>
-Package pdftex.def Info: images/Q2_knn_test_point.png  used on input line 884.
-(pdftex.def)             Requested size: 234.8775pt x 188.98009pt.
- [8
-
- <./images/Q2_knn_test_point.png>] [9
-
-]
-<images/1-1-5.png, id=128, 537.00626pt x 510.90875pt>
-File: images/1-1-5.png Graphic file (type png)
-<use images/1-1-5.png>
-Package pdftex.def Info: images/1-1-5.png  used on input line 952.
-(pdftex.def)             Requested size: 234.8775pt x 223.45966pt.
- [10
-
- <./images/1-1-5.png>] [11]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 104
-8.
-
-(C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-[12
-
-] [13
-
-] [14
-
-] [15
-
-] [16
-
-]
-<images/perceptron_boundary.png, id=189, 391.7034pt x 391.7034pt>
-File: images/perceptron_boundary.png Graphic file (type png)
-<use images/perceptron_boundary.png>
-Package pdftex.def Info: images/perceptron_boundary.png  used on input line 126
-8.
-(pdftex.def)             Requested size: 234.8775pt x 234.88638pt.
- [17
-
- <./images/perceptron_boundary.png>] [18
-
-] [19
+ []
 
 
-]
-[20
+Underfull \hbox (badness 10000) in paragraph at lines 821--826
 
-] [21
+ []
 
-]
+
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang
 1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [22
+)
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 835.
+ [5] [6]
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 925--942
+[]$[]$ $[]$ 
+ []
 
-] [23]
-This exam contains 5 questions with 24 parts, 32 subparts, and 0 subsubparts.
-This exam has a total of 77 points.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 948--950
+
+ []
+
+
+Overfull \hbox (63.30197pt too wide) detected at line 996
+[]
+ []
+
+[8
+
+] [9
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1065--1066
+
+ []
+
+[10
+
+] [11]
+<figs/autodiff.png, id=213, 553.5882pt x 448.074pt>
+File: figs/autodiff.png Graphic file (type png)
+<use figs/autodiff.png>
+Package pdftex.def Info: figs/autodiff.png  used on input line 1109.
+(pdftex.def)             Requested size: 332.15547pt x 268.84647pt.
+ [12 <./figs/autodiff.png>]
+Overfull \hbox (19.16248pt too wide) in paragraph at lines 1155--1156
+[][] 
+ []
+
+[13
+
+] [14] [15
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1309
+
+ []
+
+[16
+
+] [17] [18
+
+] [19] [20]
+
+pdfTeX warning: pdflatex.exe (file ./figs/rnn_diagram.pdf): PDF inclusion: foun
+d PDF version <1.6>, but at most version <1.5> allowed
+<figs/rnn_diagram.pdf, id=288, 722.7pt x 542.025pt>
+File: figs/rnn_diagram.pdf Graphic file (type pdf)
+<use figs/rnn_diagram.pdf>
+Package pdftex.def Info: figs/rnn_diagram.pdf  used on input line 1434.
+(pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
+[21 <./figs/rnn_diagram.pdf>] [22] [23]
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
+538.
+
+(C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+) [24]
+Overfull \hbox (11.00113pt too wide) in paragraph at lines 1557--1558
+[]\OT1/pcr/m/n/10.95 <--num[]sequences> \OT1/ptm/m/n/10.95 pos-i-tive in-te-ger
+ spec-i-fy-ing how many se-quences to pro-cess \OT1/ptm/b/n/10.95 (hyper-parame
+ter) 
+ []
+
+[25] [26]
+This exam contains 5 questions with 14 parts, 21 subparts, and 4 subsubparts.
+This exam has a total of 58 points.
 This exam has a total of 0 bonus points.
 
 enddocument/afterlastpage: lastpage setting LastPage.
-(hw3.aux)
+(hw7.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `hw3.out' has not changed.
-(rerunfilecheck)             Checksum: 5F17D783B433726E538CA8205AA90A18;931.
+Package rerunfilecheck Info: File `hw7.out' has not changed.
+(rerunfilecheck)             Checksum: 20F57C21FB9ADC508F21AD909ACC5130;3524.
  ) 
 Here is how much of TeX's memory you used:
- 50748 strings out of 474486
- 1165141 string characters out of 5740416
- 1954542 words of memory out of 5000000
- 71973 multiletter control sequences out of 15000+600000
- 614765 words of font info for 187 fonts, out of 8000000 for 9000
+ 51253 strings out of 474486
+ 1175907 string characters out of 5740416
+ 1969542 words of memory out of 5000000
+ 72439 multiletter control sequences out of 15000+600000
+ 619807 words of font info for 193 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,12n,94p,1194b,1941s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,17n,94p,1194b,1936s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
- <C:\Users\Patrick Chen\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi657\
-bbm10.pk> <C:\Users\Patrick Chen\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wa
-sy/dpi657\wasy10.pk><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Patrick Chen/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Patrick Chen/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Pa
-trick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Patrick Chen/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Patrick Chen/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/Pat
-rick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
-b><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr7.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Patrick Chen/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Patrick C
-hen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
-Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/la
-txfont/line10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/symbols/msam10.pfb><C:/Users/Patrick Chen/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Patrick C
-hen/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Use
-rs/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.
-pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courie
-r/ucrr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/u
-rw/times/utmb8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/times/utmr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on hw3.pdf (23 pages, 648102 bytes).
+ <C:\Users\Patrick Chen\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi103
+7\wasy10.pk> <C:\Users\Patrick Chen\AppData\Local\MiKTeX\fonts/pk/ljfour/public
+/wasy/dpi657\wasy10.pk><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Patrick Chen/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Patrick Chen/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
+/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi6.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Patrick Chen/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Patrick Chen/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Pat
+rick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
+><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/Patrick Chen/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
+Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/txfonts/t1xtt.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTe
+X/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/Patrick Chen/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Patrick Chen/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users/Patrick Chen/
+AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Patric
+k Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users
+/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on hw7.pdf (26 pages, 556104 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
- 118 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 526 PDF objects out of 1000 (max. 8388607)
+ 158 named destinations out of 1000 (max. 500000)
+ 204 words of extra memory for PDF output out of 10000 (max. 10000000)
 

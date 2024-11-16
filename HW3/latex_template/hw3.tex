@@ -830,7 +830,7 @@ For questions where you must fill in a blank, please make sure your final answer
         
         \begin{your_solution}[title=Your answer:,height=4cm,width=15cm]
             % YOUR ANSWER 
-            NO. If B is $\geq$ 200, then the grid search would perform better than random search. As the number of all possible combinations of the hyperparameters is 200, the grid search is guaranteed to traverse all the possible outcomes and pick the best one, while random search is not guaranteed to sample the best combination due to the distribution. 
+            No. If B is $\geq$ 200, then the grid search would perform better than random search. As the number of all possible combinations of the hyperparameters is 200, the grid search is guaranteed to traverse all the possible outcomes and pick the best one, while random search is not guaranteed to sample the best combination due to the distribution. 
         \end{your_solution}
 
         \subpart[1] Based on the intuition presented in Lecture 5, if B = 50, would you expect random search to perform better than grid search in terms of finding a better setting of the hyperparameters? Why or why not?
@@ -1006,6 +1006,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \subpart[2] Among Students 1 to 6, who is the nearest neighbor to Student 7, using Euclidean distance? Answer the Student ID only.
     
     \begin{your_solution}[title=Your answer:,height=2cm,width=5cm]
+    	3
     \end{your_solution}
     
     
@@ -1014,6 +1015,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \textbf{Round your answer to the nearest integer.}
     
     \begin{your_solution}[title=Your answer:,height=2cm,width=5cm]
+    	944
     \end{your_solution}
     
     
@@ -1026,8 +1028,8 @@ For questions where you must fill in a blank, please make sure your final answer
     {
     \checkboxchar{$\Box$} \checkedchar{$\blacksquare$}
     \begin{checkboxes}
-        \choice Rescaling only ``High School GPA" to be a percentage of 4.0
-        \choice Rescaling only ``University GPA" to be a percentage of 4.0
+        \CorrectChoice Rescaling only ``High School GPA" to be a percentage of 4.0
+        \CorrectChoice Rescaling only ``University GPA" to be a percentage of 4.0
         \choice Rescaling both High School GPA and University GPA by the same percentage/scale
         \choice None of the above.
     \end{checkboxes}
@@ -1090,18 +1092,19 @@ For questions where you must fill in a blank, please make sure your final answer
     
     \subpart[1] What is the distance between $\xv^{(2)}$ and $\xv^{(6)}$? \\
         \begin{your_solution}[title=Your answer:,height=2cm,width=5cm]
+        	2
         \end{your_solution}
         
     \subpart[1] \textbf{Select one:} What would a k-NN classifier with $k=3$ predict as the label for test point $\xv^{(7)}$?
         \begin{checkboxes}
-         \choice $\hat{y}=+$
+         \CorrectChoice $\hat{y}=+$
          \choice $\hat{y}=-$
          \choice $\hat{y}=?$
         \end{checkboxes}
         
     \subpart[1] \textbf{Select one:} What would a k-NN classifier with $k=5$ predict as the label for test point $\xv^{(7)}$?
         \begin{checkboxes}
-         \choice $\hat{y}=+$
+         \CorrectChoice $\hat{y}=+$
          \choice $\hat{y}=-$
          \choice $\hat{y}=?$
         \end{checkboxes}
@@ -1110,6 +1113,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \begin{your_solution}[title=Your answer:, height=5cm]
             % YOUR ANSWER
             % TODO: write the answer
+            No, I don't agree. In this case, changing to Euclidean distance is to only take the square root of each Hamming distance result between any two points. Thus, I do not think there is any difference on the test error in this case because when you choose k nearest neighbors for a test point, the related distance with other points remain the same, and you still get the same k candidates comparing with the case using Hamming distance.
         \end{your_solution}
         
     \end{subparts}
@@ -1119,13 +1123,14 @@ For questions where you must fill in a blank, please make sure your final answer
     \subpart[2] Let's say there are 5 different values of $k$ you wish to test (3, 5, 7, 9, 11), 2 different distance metrics (Euclidean distance and Hamming distance) and you choose to do 10-fold cross-validation. How many different classifiers will you end up training in total?
         
         \begin{your_solution}[title=Your answer:,height=2cm,width=5cm]
+        	100
         \end{your_solution}
         
     \subpart[1] \sone What is the trade-off between using cross-validation error in this example as opposed to simply calculating the validation error on a single held-out validation set?
 
         \begin{checkboxes}
             \choice Cross-validation error has a lower variance, but is less computationally expensive to calculate.
-            \choice Cross-validation error has a lower variance, but is more computationally expensive to calculate.
+            \CorrectChoice Cross-validation error has a lower variance, but is more computationally expensive to calculate.
             \choice Cross-validation error has a higher variance, but is less computationally expensive to calculate.
             \choice Cross-validation error has a higher variance, but is more computationally expensive to calculate.
         \end{checkboxes}
@@ -1143,7 +1148,7 @@ For questions where you must fill in a blank, please make sure your final answer
 
     \begin{checkboxes}
         \choice True
-        \choice False
+        \CorrectChoice False
     \end{checkboxes}
 
 
@@ -1161,8 +1166,8 @@ For questions where you must fill in a blank, please make sure your final answer
     {
     \checkboxchar{$\Box$} \checkedchar{$\blacksquare$}
     \begin{checkboxes}
-        \choice AND function, i.e., the function that evaluates to 1 if and only if all inputs are 1, and -1 otherwise.
-        \choice OR function, i.e., the function that evaluates to 1 if and only if at least one of the inputs are 1, and -1 otherwise.
+        \CorrectChoice AND function, i.e., the function that evaluates to 1 if and only if all inputs are 1, and -1 otherwise.
+        \CorrectChoice OR function, i.e., the function that evaluates to 1 if and only if at least one of the inputs are 1, and -1 otherwise.
         \choice XOR function, i.e., the function that evaluates to 1 if and only if the inputs are not all the same. For example
         $$
         \operatorname{XOR}(1,-1) = 1, \textrm{ but } \operatorname{XOR}(1,1) = -1.
@@ -1179,7 +1184,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \begin{checkboxes}
         \choice $N$
         \choice $N\times M$
-        \choice $M$
+        \CorrectChoice $M$
     \end{checkboxes}
 
 
@@ -1207,7 +1212,7 @@ For questions where you must fill in a blank, please make sure your final answer
     
     \begin{checkboxes}
         \choice $[18,25,14,34]$ 
-        \choice $[18,30,63,61]$ 
+        \CorrectChoice $[18,30,63,61]$ 
         \choice $[16,56,18,47]$ 
         \choice $[18,52,19,47]$ 
     \end{checkboxes}
@@ -1226,7 +1231,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \choice If the whole dataset and boundary are translated away from origin, then the mistake bound will also increase.
         \choice If the pair-wise distance between data points is increased, i.e. the data is scaled by some constant value, then the mistake bound will also increase.
         \choice The mistake bound is linearly inverse-proportional to the minimum distance of any data point to the separating hyperplane of the data.
-        \choice None of the above.
+        \CorrectChoice None of the above.
     \end{checkboxes}
     }
 
@@ -1237,7 +1242,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \begin{checkboxes}
         \choice $[-1,1]$
         \choice $[4,6]$
-        \choice $[-3,0]$
+        \CorrectChoice $[-3,0]$
         \choice $[-6,-4]$
     \end{checkboxes}
 
@@ -1249,8 +1254,8 @@ For questions where you must fill in a blank, please make sure your final answer
     {%
     \checkboxchar{$\Box$} \checkedchar{$\blacksquare$}
     \begin{checkboxes}
-        \choice $\bm{\theta} = [-2,1]$, error = 5/13
-        \choice $\bm{\theta} = [2,-1]$, error = 8/13
+        \CorrectChoice $\bm{\theta} = [-2,1]$, error = 5/13
+        \CorrectChoice $\bm{\theta} = [2,-1]$, error = 8/13
         \choice $\bm{\theta} = [2,-1]$, error = 5/13
         \choice $\bm{\theta} = [-2,1]$, error = 8/13
         \choice None of the above.
@@ -1311,6 +1316,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \textbf{Round to 4 decimal places after the decimal point.}
         
         \begin{your_solution}[title=Radius:,height=2cm,width=5cm]
+        	3.7417
         \end{your_solution}
         
         
@@ -1329,6 +1335,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \textbf{Round to 4 decimal places after the decimal point.}
         
         \begin{your_solution}[title=Margin:,height=2cm,width=5cm]
+        	1.0243
         \end{your_solution}
         
         
@@ -1336,6 +1343,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \subpart[1] Based on the above rounded values, what is the theoretical perceptron mistake bound for this dataset, given this linear separator? \\ \textbf{Round to 4 decimal places after the decimal point.}
         
         \begin{your_solution}[title=Mistake Bound:,height=2cm,width=5cm]
+        	13.3438
         \end{your_solution}
         
         
@@ -1371,11 +1379,17 @@ For questions where you must fill in a blank, please make sure your final answer
         \\ \textbf{Round to 4 decimal places after the decimal point.}
         
         \begin{your_solution}[title=Gradient:,height=2cm,width=6cm]
+        	209.2
         \end{your_solution}
 
         \begin{your_solution}[title=Work,height=6cm]
         % YOUR ANSWER
         % TODO: write the answer
+        $\frac{\partial J(w, b)}{\partial w} = \frac{2}{N} \sum_{i=1}^{N} (w x_i + b - y_i) x_i$
+        \small
+        \newline with N = 5 and plugging in each of the five date points $(x_i, y_i)$
+        \newline
+        $\Rightarrow \frac{2}{5} ((27-1)*9 + (6-0)*2 + (18-3)*6 + 3*1 + (24-1)*8) \newline= 209.2$
         \end{your_solution}
     \clearpage
 
@@ -1383,10 +1397,16 @@ For questions where you must fill in a blank, please make sure your final answer
     \subpart[2] What is the gradient of the loss function with respect to the intercept $b$, calculated over all the data points, in the first step of the gradient descent update?
 
         \begin{your_solution}[title=Gradient:,height=2cm,width=6cm]
+        	29.2
         \end{your_solution}
 
         \begin{your_solution}[title=Work,height=8cm]
         % YOUR ANSWER
+        $\frac{\partial J(w, b)}{\partial b} = \frac{2}{N} \sum_{i=1}^{N} (w x_i + b - y_i)$
+		\small
+		\newline with N = 5 and plugging in each of the five date points $(x_i, y_i)$
+		\newline
+		$\Rightarrow \frac{2}{5} ((27-1) + (6-0) + (18-3) + (3-0) + (24-1)) \newline= 29.2$        
         \end{your_solution}
 
 
@@ -1398,10 +1418,12 @@ For questions where you must fill in a blank, please make sure your final answer
         \\ \textbf{Round to 4 decimal places after the decimal point.}
     
     \begin{your_solution}[title=Weight:,height=2cm,width=6cm]
+    	0.9080
     \end{your_solution}
     
     
     \begin{your_solution}[title=Intercept:,height=2cm,width=6cm]
+    	-0.2920
     \end{your_solution}
 
     
@@ -1421,7 +1443,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \begin{checkboxes}
             \choice $w_1 = w_2, b_1 = b_2$
             \choice $w_1 \neq w_2, b_1 = b_2$
-            \choice $w_1 = w_2, b_1 \neq b_2$
+            \CorrectChoice $w_1 = w_2, b_1 \neq b_2$
             \choice $w_1 \neq w_2, b_1 \neq b_2$
         \end{checkboxes}
         
@@ -1431,6 +1453,7 @@ For questions where you must fill in a blank, please make sure your final answer
         \subpart[2]  We decide to ask a friend to analyze $\Dc_1$; however, he makes a mistake by duplicating a subset of the rows in $\Dc_1$.  Explain why the linear regression parameters that minimize mean-squared error on the duplicated data \textit{may} differ from the parameters learned on $\Dc_1$, i.e. $w_1$ and $b_1$.
         
         \begin{your_solution}[title=Your answer:,height=4cm,width=15cm]
+        	Because the linear regression will take all points in $D_1$ into the calculation of mean-squared error, and the duplicated points will have larger weights in the calculation, causing the model focus more on minimizing the error on these points. Besides, the gradient calculation will also focus more on these duplicated points. Accordingly, the optimized parameters $w_1$ and $b_1$ will be different from the ones calculated from the original dataset $D_1$.
         \end{your_solution}
         
         
@@ -1453,12 +1476,14 @@ In particular, for a given point $\bm{x}^{(i)}$, the log-cosh loss of a model wi
          What is the partial derivative of $J^{(i)}(\bm\theta)$ with respect to the $j^{\textrm{th}}$ parameter, $\theta_j$? It may be helpful to know that $\frac{d}{dx}\cosh(x) = \sinh(x)$. You should not need to include an intercept term. 
          
         \begin{your_solution}[title=Your answer:,height=6cm,width=15cm]
+        	 $\mathbf{\theta} = \begin{bmatrix} b \\ \theta_1\\.\\.\\.\\\theta_n \end{bmatrix}$, b = 0.\newline $\frac{\partial J^{(i)}(\theta)}{\partial {\theta}_j} = \frac{\sinh(\theta^T x^{(i)} - y^{(i)})}{\cosh(\theta^T x^{(i)} - y^{(i)})}*x^{(i)}_j$ = $\tanh(\theta^T x^{(i)} - y^{(i)})*x^{(i)}_j$, where \newline $x^{(i)}_j$ is the $j^{th}$ dimension of instance $x^{(i)}.$
         \end{your_solution}
         
         \subpart[2] 
          What is the gradient of $J^{(i)}(\bm\theta)$ with respect to the entire parameter vector $\bm\theta$?
          
         \begin{your_solution}[title=Your answer:,height=4cm,width=15cm]
+        	$\frac{\partial J^{(i)}(\theta)}{\partial {\theta}} =  \tanh(\theta^T x^{(i)} - y^{(i)})*x^{(i)}$
         \end{your_solution}
         
         \subpart[2] Let 
@@ -1469,10 +1494,18 @@ In particular, for a given point $\bm{x}^{(i)}$, the log-cosh loss of a model wi
         To find the optimal parameter vector $\bm\theta^*$ that minimizes $J(\bm\theta)$, we again decide to use gradient descent. Write pseudocode that performs gradient descent for one iteration. Set the learning rate to $\alpha = 0.1$ and initialize $\bm\theta$ to be the zero vector. You may use $\texttt{gradient[i]}$ as a variable that contains your answer to part (b) in your pseudocode. Limit your answer to 10 lines.
 
         \begin{your_solution}[title=Your Answer,height=5.5cm,width=15cm]
-            
         % INSERT YOUR ANSWER BELOW
+    
         \begin{your_code_solution}
-
+# m is the number of dimensions of x
+grad_bat   = np.zeros((m, 1))
+theta_init = np.zeros((m, 1)) 
+theta      = theta_init
+alpha = 0.1
+# N is the number of data points
+for i in range(N):
+	grad_bat += gradient[i]
+theta -= alpha*grad_bat
         \end{your_code_solution}
             
         \end{your_solution}
@@ -1497,7 +1530,11 @@ After you have completed all other components of this assignment, report your an
 
 \begin{your_solution}[height=6cm]
 % YOUR ANSWER 
-
+\begin{enumerate}
+	\item No.
+	\item No.
+	\item No.
+\end{enumerate}
 \end{your_solution}
     
 \end{document}
