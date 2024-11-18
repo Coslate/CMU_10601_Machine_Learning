@@ -14,6 +14,18 @@ import matplotlib.pyplot as plt
 # And DO NOT reset the torch seed anywhere else in your code!
 torch.manual_seed(10601)
 
+# for Q5.3 empirical question
+'''
+from rnn import *
+lm = torch.load("model_q5_4_large_stories.pt")
+tokenizer = AutoTokenizer.from_pretrained("my_tokenizer")
+device = (
+    "cuda"
+    if torch.cuda.is_available()
+    else "mps" if torch.backends.mps.is_available() else "cpu"
+)
+'''
+
 
 class SentenceDataset:
     def __init__(self, a):
@@ -111,15 +123,16 @@ class RNN(nn.Module):
             # create a dummy hidden state of all zeros
             
             # TODO: Fill this in (After you intialize, make sure you add .to(input))
-            last_hidden_state = torch.zeros(input.size(0), self.hidden_dim).to(input)
+            last_hidden_state = torch.zeros(input.size(0), 1, self.hidden_dim).to(input)
         else:
             # TODO: fill this in
             last_hidden_state = hidden_prev
 
         # Call the RNN cell and apply the transform to get a prediction
-        next_hidden_state = self.cell(input, last_hidden_state)
+        next_hidden_state = self.cell(input, last_hidden_state[:, -1, :])
         next_output_state = self.out(next_hidden_state)
 
+        #return next_hidden_state[:, -1, :], next_output_state[:, -1, :]
         return next_hidden_state, next_output_state
 
     def forward(self, sequence: Tensor) -> Tensor:
@@ -139,15 +152,16 @@ class RNN(nn.Module):
         hidden_states = None
         output_states = []
         b, t, _ = sequence.shape
-        prev_hidden_state = None
+        #prev_hidden_state = None
 
         for i in range(t):
             # TODO: Extract the current input 
             inp = sequence[:, i, :]
 
             # TODO: Call step() to get the next hidden/output states
-            next_hidden_state, next_output_state = self.step(input=inp, hidden_prev=prev_hidden_state)
-            prev_hidden_state = next_hidden_state
+            #next_hidden_state, next_output_state = self.step(input=inp, hidden_prev=prev_hidden_state)
+            next_hidden_state, next_output_state = self.step(input=inp, hidden_prev=hidden_states)
+            #prev_hidden_state = next_hidden_state
             next_hidden_state = next_hidden_state.unsqueeze(1)
 
             # TODO: Concatenate the newest hidden state to to all previous ones
@@ -374,8 +388,8 @@ class RNNLanguageModel(nn.Module):
             #embed_reshape = embed.reshape((bs, embed.shape[-1]))
 
             # Get next hidden state and next attn input state from RNN
-            #next_hidden_state, next_attn_input = self.rnn.step(embed, hidden_states)
-            next_hidden_state, next_attn_input = self.rnn.step(embed, hidden_states[:, -1, :])
+            next_hidden_state, next_attn_input = self.rnn.step(embed, hidden_states)
+            #next_hidden_state, next_attn_input = self.rnn.step(embed, hidden_states[:, -1, :])
 
             # Update hidden states
             hidden_states = torch.cat(
@@ -910,12 +924,12 @@ if __name__ == "__main__":
 
     print("Finished Loading Dataset")
 
+    '''
     # Initialize PyTorch cross entropy loss function
     loss_fn = nn.CrossEntropyLoss()
     optimizer = optim.Adam(lm.parameters(), lr=1e-3)
 
     ### BEGIN: Training Loop
-    '''
     start = time.time()
     train_loss, valid_loss = train(
         lm,
@@ -945,7 +959,7 @@ if __name__ == "__main__":
     print("Final Valid Loss: ", valid_loss[-1])
 
     # Saves your trained model weights(Please comment when submitting to gradescope)
-    #torch.save(lm, "model_q5_4_large_stories.pt")
+    torch.save(lm, "model_q5_4_large_stories.pt")
     '''
 
     #plotQuestion5_1(train_dataloader, valid_dataloader, vocab_size, args.dk, args.dv, args.num_sequences, args.batch_size)
@@ -986,10 +1000,11 @@ if __name__ == "__main__":
     # Please comment out when submitting to gradescope
     test_strs = ["Once upon a time there was a "]
     print("----------------")
+    num_tokens = 128
     samples_per_setting = 20
     for temperature in [0, 0.3, 0.8]:
         for _ in range(samples_per_setting):
-            completion = complete(lm, tokenizer, test_strs[0], num_tokens=128, temperature=temperature, device=device)
+            completion = complete(lm, tokenizer, prefix=test_strs[0], num_tokens=num_tokens, temperature=temperature, device=device)
             print(f"temperature = {temperature}")
             print("  Test prefix:", test_strs[0])
             print("  Test output:", completion)
