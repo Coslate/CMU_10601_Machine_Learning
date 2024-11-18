@@ -1036,10 +1036,20 @@ Above $\yv_t$ is a one-hot vector representing the label for the $t$th timestep,
         
     \begin{your_solution}[title=$\frac{\partial J}{\partial \ov_t}$,height=2.5cm,width=8.5cm]
     % YOUR ANSWER
+    $\hat{y}_{t} - y_{t}$
     \end{your_solution}
     
     \begin{your_solution}[title=Work,height=6cm,width=14cm]
     % YOUR ANSWER
+    \small
+    $o_t \in \mathbb{R}^2$. Assume $o_t = [o_{t,1} \hspace{1mm} o_{t,2}]^T$. We have: $J_t = -\sum_{i=1}^{2} y_{t,i} \log(\hat{y}_{t,i})$, and $\hat{y}_{t,i} = \frac{\exp(o_{t,i})}{\sum_{j=1}^{2} \exp(o_{t,j})}$. Then we can derive $\frac{\partial J}{\partial o_{t,k}}$ = $g_{Jt}$$\frac{\partial J_{t}}{\partial o_{t,k}}$ = $\frac{\partial J_{t}}{\partial o_{t,k}}$ as below:\\
+    \[
+    \begin{aligned}
+    	\frac{\partial J_t}{\partial o_{t,k}} &= -\sum_{i=1}^{2} \frac{\partial J_t}{\partial \hat{y}_{t,i}} \frac{\partial \hat{y}_{t,i}}{\partial o_{t,k}}    \\&= -\sum_{i=1}^{2} \frac{y_{t,i}}{\hat{y}_{t,i}} \hat{y}_{t, i} (\mathbb{I}[i = k] - \hat{y}_{t, k})
+    	                                    \\&= \hat{y}_{t, k} - y_{t,k}
+    \end{aligned}
+    \]
+    So, $\frac{\partial J}{\partial o_{t}}$ = $\frac{\partial J_t}{\partial o_{t}}$ = $\hat{y}_{t} - y_{t}$
     \end{your_solution}
 
 \clearpage
@@ -1047,10 +1057,22 @@ Above $\yv_t$ is a one-hot vector representing the label for the $t$th timestep,
         
     \begin{your_solution}[title=$\frac{\partial J}{\partial \hv_i}$,height=2.5cm,width=8.5cm]
     % YOUR ANSWER
+    $\sum_{t \geq i}^{3} \left(W_{hh}^T\right)^{t-i} W_{hy}^T g_{o_t}$
     \end{your_solution}
     
     \begin{your_solution}[title=Work,height=6cm,width=14cm]
     % YOUR ANSWER
+    \tiny
+    According to the definition above, we have:
+    
+    \[
+    \begin{aligned}
+    	g_{h_i} = \frac{\partial J}{\partial h_i} &=  \frac{\partial J_{i}}{\partial h_i} + \frac{\partial J_{i+1}}{\partial h_i} + \frac{\partial J_{i+2}}{\partial h_i} + ... +\frac{\partial J_{i+n}}{\partial h_i}, where \hspace{1mm} i+n = T, T=3 \hspace{1mm} in\hspace{1mm} this\hspace{1mm} context. \\
+    	&= W_{hy}^Tg_{o_{i}} + W_{hh}^TW_{hy}^Tg_{o_{i+1}} + W_{hh}^TW_{hh}^TW_{hy}^Tg_{o_{i+2}} + ... + (W_{hh}^T)^nW_{hy}^Tg_{o_{i+n}} \\
+    	&= \sum_{t \geq i}^{3} \left(W_{hh}^T\right)^{t-i} W_{hy}^T g_{o_t}
+    \end{aligned}
+    \]
+    where $(W_{hh}^T)^n$ represent $W_{hh}^TW_{hh}^T...W_{hh}^T$, n matrix multiplication on same matrix $W_{hh}^T$.
     \end{your_solution}
     
     \subsubpart[3] What is $g_{\Wv_{hh}} = \frac{\partial J}{\partial \Wv_{hh}}$? Write your solution in terms of $\gv_{\hv_i}$ and $\hv_i$ in the first box, and show your work in the second. (Hint: $\Wv_{hh}$ is in every timestep, so you need to consider that in the derivative.)
@@ -1058,16 +1080,19 @@ Above $\yv_t$ is a one-hot vector representing the label for the $t$th timestep,
     
     \begin{your_solution}[title=$\frac{\partial J}{\partial \Wv_{hh}}$,height=2.5cm,width=10.5cm]
     % YOUR ANSWER
+    $\sum_{i=1}^{3} g_{h_i} h_{i-1}^T$
     \end{your_solution}
     
     \begin{your_solution}[title=Work,height=6.5cm,width=14cm]
         % YOUR ANSWER
+    \[
+	\begin{aligned}    
+		g_{W_{hh}} = \frac{\partial J}{\partial W_{hh}} &= \sum_{i=1}^{3} \frac{\partial J}{\partial h_i} \left( \frac{\partial 	h_i}{\partial W_{hh}} \right)^T \\
+		&= \sum_{i=1}^{3} g_{h_i} \left( \frac{\partial h_i}{\partial W_{hh}} \right)^T \\
+		&= \sum_{i=1}^{3} g_{h_i} h_{i-1}^T
+	\end{aligned}
+	\]        
     \end{your_solution}\\
-    
-
-
-
-    
     \end{subsubparts}
     
 \end{subparts}
@@ -1084,9 +1109,9 @@ Above $\yv_t$ is a one-hot vector representing the label for the $t$th timestep,
 
         \choice An RNN-LM is only exclusively used as an encoder, which can process sequential data and encode it into a fixed-size state vector.
 
-        \choice An RNN-LM includes additional layers and structures specifically designed to predict the next token in a sequence, making it more suited for tasks like text generation than a standard RNN.
+        \CorrectChoice An RNN-LM includes additional layers and structures specifically designed to predict the next token in a sequence, making it more suited for tasks like text generation than a standard RNN.
 
-        \choice The RNN-LM is trained to maximize the probability of a sequence of tokens, given a previous sequence, which is not a typical training objective of a standard RNN.
+        \CorrectChoice The RNN-LM is trained to maximize the probability of a sequence of tokens, given a previous sequence, which is not a typical training objective of a standard RNN.
         
         \choice None of the above.
     \end{checkboxes}
@@ -1115,7 +1140,7 @@ Above $\yv_t$ is a one-hot vector representing the label for the $t$th timestep,
     % YOUR ANSWER
     % Change \emptycircle to \filledcircle for the appropriate selection/selections
         \item 
-            \emptycircle
+            \filledcircle
             % \filledcircle
             It records the current module onto the stack along with its parameters and tensors to ensure that the output tensor is saved for the backward pass.
         \item 
@@ -1146,12 +1171,14 @@ Above $\yv_t$ is a one-hot vector representing the label for the $t$th timestep,
             % \filledcircle
             True 
         \item 
-            \emptycircle 
+            \filledcircle 
             % \filledcircle
             False 
     \end{list}
 
 \begin{your_solution}[height=3cm, width=\textwidth]
+	\small
+	The stack is used to store the order of the operations performed in forward pass, operating in LIFO, Last In First Out, so as to provide the reverse topological order when doing the backward pass. However, a queue operates in FIFO, First In First Out, which does not align with the required reverse ordering execution in backward pass, so replacing the stack with a queue would need extra complexity and increase the runtime to compute the reverse order.
 \end{your_solution}
 
 % (Just kidding. We would never replace Neural the Narwhal!)
@@ -1174,7 +1201,7 @@ Consider a Transformer model employing a multi-headed self-attention mechanism. 
             % \filledcircle
             $H \times d_k \times d_{\text{model}}$
         \item 
-            \emptycircle 
+            \filledcircle 
             % \filledcircle
             $T \times d_k$
         \item 
@@ -1194,7 +1221,7 @@ Consider a Transformer model employing a multi-headed self-attention mechanism. 
             % \filledcircle
             $T \times H \times d_k$
         \item 
-            \emptycircle 
+            \filledcircle 
             % \filledcircle
             $T \times H \times d_v$
         \item 
@@ -1233,6 +1260,21 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
 
 \begin{your_solution}[height=7cm]
     % YOUR TABLE HERE
+	\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../handout/Q5_1_training.png}
+	\refstepcounter{figure} \\ % Increment the figure counter
+	{\tiny \textbf{Figure \thefigure:} Training Loss vs Number of Sequences}  % Manually add a caption/title
+	\label{fig:Q5_1_training}         % Label for referencing	
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../handout/Q5_1_validation.png}
+	\refstepcounter{figure} \\ % Increment the figure counter
+	{\tiny \textbf{Figure \thefigure:} Validation Loss vs Number of Sequences} % Manually add a caption/title
+	\label{fig:Q5_1_validation}         % Label for referencing
+	\end{minipage}    
 \end{your_solution}
 
 \clearpage
@@ -1254,6 +1296,21 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
     
     \begin{your_solution}[height=7cm]
         % YOUR TABLE HERE
+	\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../handout/Q5_2_training.png}
+	\refstepcounter{figure} \\ % Increment the figure counter
+	{\tiny \textbf{Figure \thefigure:} Training Loss vs Number of Sequences}  % Manually add a caption/title
+	\label{fig:Q5_2_training}         % Label for referencing	
+	\end{minipage}
+\hfill
+	\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../handout/Q5_2_validation.png}
+	\refstepcounter{figure} \\ % Increment the figure counter
+	{\tiny \textbf{Figure \thefigure:} Validation Loss vs Number of Sequences} % Manually add a caption/title
+	\label{fig:Q5_2_validation}         % Label for referencing
+	\end{minipage}        
     \end{your_solution}
     
     \subpart[2] Report the total time taken for each of the batch sizes from the previous part (a) in the form of a table. The table contains four rows, one each for \texttt{batch\_size} $32$, $64$, $128$, and $256$.
@@ -1264,10 +1321,10 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
             \toprule
             {\bf Batch Size}   & {\bf Time (sec)}  \\
             \midrule
-            32 &   \\
-            64 &   \\
-            128 &   \\
-            256 &   \\
+            32 & 241.7877  \\
+            64 & 124.2302  \\
+            128 & 61.0216  \\
+            256 & 39.6777  \\
             \bottomrule
         \end{tabular}
     \end{center}
@@ -1278,6 +1335,9 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
     \subpart[2]
     Provide a short answer describing the tradeoff between batch size and training speed/performance based on your observations from parts (a) and (b). \\
     \begin{your_solution}[height=4cm]
+    	\small
+    	Smaller batch sizes lead to longer training time because the model process fewer samples per step, increasing the number of iterations during an epoch. However, smaller batch size brings better performance, lower loss, as more noise in the process of optimization provides more opportunity to escape local minimum.
+    	On the other hand, larger batch sizes has much fewer training time because it processes more data at once to further utilize the data parallelism. However, the smoother updated gradients, with less noise, could have a problem of having less opportunity to escape poor local minimum, resulting in worse performance, higher loss, during an epoch.
     \end{your_solution}
 \end{subparts}
 
@@ -1290,6 +1350,21 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
     
     \begin{your_solution}[height=7cm]
         % YOUR PLOT HERE
+	\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../handout/Q5_3_training.png}
+	\refstepcounter{figure} \\ % Increment the figure counter
+	{\tiny \textbf{Figure \thefigure:} Training Loss vs num\_sequences}  % Manually add a caption/title
+	\label{fig:Q5_3_training}         % Label for referencing	
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{../handout/Q5_3_validation.png}
+	\refstepcounter{figure} \\ % Increment the figure counter
+	{\tiny \textbf{Figure \thefigure:} Validation Loss vs num\_sequences} % Manually add a caption/title
+	\label{fig:Q5_3_validation}         % Label for referencing
+	\end{minipage}        
     \end{your_solution}
 
 
@@ -1313,7 +1388,7 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
             \toprule
             {\bf Train Loss}   & {\bf Validation Loss} & {\bf Time (sec)} \\
             \midrule
-                &   &   \\
+               2.032871 & 2.285386  &  777.4245 \\
             \bottomrule
         \end{tabular}
     \end{center} 
@@ -1326,14 +1401,23 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
     
     \begin{your_solution}[title=\texttt{Temperature = 0}, height=3cm]
         % YOUR ANSWER
+        \small
+        Test prefix: Once upon a time there was a \\
+        Test output: footh nose. It was a footh nose. It was a footh nose. It was a footh nose. It was a footh nose. It was a footh nose. It was a footh nose. It was a footh nose. One no
     \end{your_solution}
     
     \begin{your_solution}[title=\texttt{Temperature = 0.3}, height=3cm]
         % YOUR ANSWER
+        \small
+		Test prefix: Once upon a time there was a \\
+		Test output: little girl called Mary. She was three years old and loved to swim in the sand. One day, she found a sandwich in the sandwich and it was very dirty. She wanted to swim in the sandwich. She was very happy and she wanted to swim and swimming in the sandwich. She asked her mom, "Can I swimse        
     \end{your_solution}
     
     \begin{your_solution}[title=\texttt{Temperature = 0.8}, height=3cm]
         % YOUR ANSWER
+        \small
+		Test prefix: Once upon a time there was a \\
+		Test output: little boy called John. He had a special turtle. He liked to run and jump and jump around the turtle, and going the turtle of the castle. He was very scared and tried to sleep. He didn't want to, but he was just a bit sad. He wanted to pick on the turtle of the turtles so he had made a mess. The turtle was so happy that he knew it was ia not
     \end{your_solution}
 
 
@@ -1342,6 +1426,8 @@ Please \emph{include a legend} that clearly indicates which curve corresponds to
 
     \begin{your_solution}[height=4cm]
         % YOUR ANSWER
+        \small
+        As the temperature increases, the content of the generated text becomes more and more random and various, and at the meanwhile the coherence between sentences becomes lesser and lesser. When temperature = 0, the model just repeats the same, most probable, words over and over. When temerature = 0.3, the output is more various, including some randomness and creativity. When temperature = 0.8, the output shows even more diverse contents and creativity, but lacks of coherence. In my opinion, temperature with 0.3 generates the best output that retains and balances between creativity and coherence.
     \end{your_solution}
 \end{subparts}
 
@@ -1359,7 +1445,11 @@ After you have completed all other components of this assignment, report your an
 
 \begin{your_solution}[height=6cm]
 % YOUR ANSWER 
-
+\begin{enumerate}
+    \item No.
+	\item No.
+	\item No.
+\end{enumerate}	
 \end{your_solution}
 
 \newpage
