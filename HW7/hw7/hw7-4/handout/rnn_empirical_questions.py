@@ -664,6 +664,17 @@ def plotQuestion5_3(train_data, valid_data, vocab_size, dk, dv, embed_dim, batch
 
     # Plot Training Loss
     plt.figure(figsize=(10, 6))
+    plt.plot(num_sequences, train_losses, label='Training Loss')
+    plt.plot(num_sequences, valid_losses, label='Validation Loss')
+    plt.xlabel('num_sequence')
+    plt.ylabel('Loss')
+    plt.title('Training and Validation Loss for Different num_sequences')
+    plt.legend()
+    plt.grid()
+    plt.show()    
+
+    '''
+    plt.figure(figsize=(10, 6))
     plt.plot(num_sequences, train_losses, label=f'Training Loss vs different num_sequences')
     plt.xlabel('num_sequence')
     plt.ylabel('Loss')
@@ -681,6 +692,7 @@ def plotQuestion5_3(train_data, valid_data, vocab_size, dk, dv, embed_dim, batch
     plt.legend()
     plt.grid()
     plt.show()
+    '''
 
 def plotQuestion5_2(train_dataset, valid_dataset, embed_dim, vocab_size, dk, dv, num_sequences, device):
     print(f"num_sequences = {num_sequences}")
@@ -732,9 +744,9 @@ def plotQuestion5_2(train_dataset, valid_dataset, embed_dim, vocab_size, dk, dv,
         )
     
         # Store losses
-        train_losses[batch_size] = train_loss
-        valid_losses[batch_size] = valid_loss
-        num_sequences_dict[batch_size] = [batch_size * idx for idx in range(1, len(train_loss) + 1)]
+        train_losses[batch_size] = train_loss[:10]
+        valid_losses[batch_size] = valid_loss[:10]
+        num_sequences_dict[batch_size] = [batch_size * idx * (num_sequences*0.1)//batch_size for idx in range(1, len(train_loss) + 1) if idx <= 10]
         total_time[batch_size] = elapsed_time
 
     # Plot Training Loss
@@ -807,7 +819,7 @@ def plotQuestion5_1(train_data, valid_data, vocab_size, dk, dv, num_sequences, b
         valid_losses[embed_dim] = valid_loss
 
     # Generate plots
-    num_sequences = [batch_size * idx for idx in range(1, len(train_losses[embed_dims[0]]) + 1)]
+    num_sequences = [batch_size * idx * (num_sequences*0.1)//batch_size for idx in range(1, len(train_losses[embed_dims[0]]) + 1)]
     print(f"batch_size = {batch_size}")
     print(f"train_losses[embed_dims[0]] = {train_losses[embed_dims[0]]}")
     print(f"num_sequences = {num_sequences}")
@@ -964,7 +976,7 @@ if __name__ == "__main__":
 
     #plotQuestion5_1(train_dataloader, valid_dataloader, vocab_size, args.dk, args.dv, args.num_sequences, args.batch_size)
     #plotQuestion5_2(train_data, valid_data, args.embed_dim, vocab_size, args.dk, args.dv, args.num_sequences, device)
-    #plotQuestion5_3(train_dataloader, valid_dataloader, vocab_size, args.dk, args.dv, args.embed_dim, args.batch_size)
+    plotQuestion5_3(train_dataloader, valid_dataloader, vocab_size, args.dk, args.dv, args.embed_dim, args.batch_size)
     #plotQuestion5_4a(train_data, valid_data, args.embed_dim, vocab_size, args.dk, args.dv, args.num_sequences, args.batch_size, device)
 
 
@@ -974,8 +986,6 @@ if __name__ == "__main__":
     # >>> lm = torch.load("model.pt")
     # This may be helpful for Empirical Question 5.4, where
     # training the model may take up to 45 minutes.
-    from rnn import *
-    lm = torch.load("model_q5_4_large_stories.pt")
 
     """
     # Example code for generating text with your LM
@@ -998,6 +1008,10 @@ if __name__ == "__main__":
 
     # Looping through all temperature values for empirical questions
     # Please comment out when submitting to gradescope
+    '''
+    from rnn import *
+    lm = torch.load("model_q5_4_large_stories.pt")
+
     test_strs = ["Once upon a time there was a "]
     print("----------------")
     num_tokens = 128
@@ -1009,6 +1023,7 @@ if __name__ == "__main__":
             print("  Test prefix:", test_strs[0])
             print("  Test output:", completion)
         print("----------------")
+    '''
 
     # Save your metrics
     '''

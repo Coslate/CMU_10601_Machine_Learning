@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  18 NOV 2024 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  18 NOV 2024 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1988,94 +1988,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 1045--1046
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1095--1096
+Underfull \hbox (badness 10000) in paragraph at lines 1098--1099
 
  []
 
 [10
 
 ] [11]
-<figs/autodiff.png, id=220, 553.5882pt x 448.074pt>
+<figs/autodiff.png, id=222, 553.5882pt x 448.074pt>
 File: figs/autodiff.png Graphic file (type png)
 <use figs/autodiff.png>
-Package pdftex.def Info: figs/autodiff.png  used on input line 1134.
+Package pdftex.def Info: figs/autodiff.png  used on input line 1137.
 (pdftex.def)             Requested size: 332.15547pt x 268.84647pt.
  [12 <./figs/autodiff.png>]
-Overfull \hbox (19.16248pt too wide) in paragraph at lines 1182--1183
+Overfull \hbox (19.16248pt too wide) in paragraph at lines 1185--1186
 [][] 
  []
 
 [13
 
 ]
-<../handout/Q5_1_training.png, id=241, 690.32906pt x 431.36156pt>
+<../handout/Q5_1_training.png, id=243, 682.80093pt x 415.5525pt>
 File: ../handout/Q5_1_training.png Graphic file (type png)
 <use ../handout/Q5_1_training.png>
-Package pdftex.def Info: ../handout/Q5_1_training.png  used on input line 1265.
+Package pdftex.def Info: ../handout/Q5_1_training.png  used on input line 1268.
 
-(pdftex.def)             Requested size: 201.25961pt x 125.75642pt.
-<../handout/Q5_1_validation.png, id=242, 691.08188pt x 431.36156pt>
+(pdftex.def)             Requested size: 209.6473pt x 127.58981pt.
+<../handout/Q5_1_validation.png, id=244, 680.5425pt x 409.53pt>
 File: ../handout/Q5_1_validation.png Graphic file (type png)
 <use ../handout/Q5_1_validation.png>
 Package pdftex.def Info: ../handout/Q5_1_validation.png  used on input line 127
-3.
-(pdftex.def)             Requested size: 201.25961pt x 125.61821pt.
- [14 <../handout/Q5_1_training.png> <../handout/Q5_1_validation.png>]
-<../handout/Q5_2_training.png, id=253, 684.30656pt x 412.54124pt>
+6.
+(pdftex.def)             Requested size: 209.6473pt x 126.15936pt.
+
+Overfull \hbox (2.08049pt too wide) in paragraph at lines 1266--1281
+[]$[]$  $[]$ 
+ []
+
+[14 <../handout/Q5_1_training.png> <../handout/Q5_1_validation.png>]
+<../handout/Q5_2_training.png, id=255, 688.07062pt x 415.5525pt>
 File: ../handout/Q5_2_training.png Graphic file (type png)
 <use ../handout/Q5_2_training.png>
-Package pdftex.def Info: ../handout/Q5_2_training.png  used on input line 1301.
+Package pdftex.def Info: ../handout/Q5_2_training.png  used on input line 1304.
 
-(pdftex.def)             Requested size: 191.76747pt x 115.60518pt.
-<../handout/Q5_2_validation.png, id=254, 670.00313pt x 420.82219pt>
+(pdftex.def)             Requested size: 199.75957pt x 120.64029pt.
+<../handout/Q5_2_validation.png, id=256, 676.02562pt x 411.03563pt>
 File: ../handout/Q5_2_validation.png Graphic file (type png)
 <use ../handout/Q5_2_validation.png>
-Package pdftex.def Info: ../handout/Q5_2_validation.png  used on input line 130
-9.
-(pdftex.def)             Requested size: 191.76747pt x 120.44284pt.
+Package pdftex.def Info: ../handout/Q5_2_validation.png  used on input line 131
+2.
+(pdftex.def)             Requested size: 199.75957pt x 121.45515pt.
+
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 1302--1317
+[]$[]$  $[]$ 
+ []
 
 [15
 
  <../handout/Q5_2_training.png> <../handout/Q5_2_validation.png>]
-<../handout/Q5_3_training.png, id=266, 691.08188pt x 411.03563pt>
-File: ../handout/Q5_3_training.png Graphic file (type png)
-<use ../handout/Q5_3_training.png>
-Package pdftex.def Info: ../handout/Q5_3_training.png  used on input line 1355.
+<../handout/Q5_3_training_validation.png, id=268, 694.09312pt x 417.05812pt>
+File: ../handout/Q5_3_training_validation.png Graphic file (type png)
+<use ../handout/Q5_3_training_validation.png>
+Package pdftex.def Info: ../handout/Q5_3_training_validation.png  used on input
+ line 1358.
+(pdftex.def)             Requested size: 230.6133pt x 138.56508pt.
 
-(pdftex.def)             Requested size: 201.25961pt x 119.69902pt.
-<../handout/Q5_3_validation.png, id=267, 691.08188pt x 412.54124pt>
-File: ../handout/Q5_3_validation.png Graphic file (type png)
-<use ../handout/Q5_3_validation.png>
-Package pdftex.def Info: ../handout/Q5_3_validation.png  used on input line 136
-3.
-(pdftex.def)             Requested size: 201.25961pt x 120.13748pt.
+Underfull \hbox (badness 10000) in paragraph at lines 1356--1364
 
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1384
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1392--1393
 
  []
 
 [16
 
- <../handout/Q5_3_training.png> <../handout/Q5_3_validation.png>] [17]
-[18
+ <../handout/Q5_3_training_validation.png>] [17] [18
 
 ] [19] [20]
 
 pdfTeX warning: pdflatex.exe (file ./figs/rnn_diagram.pdf): PDF inclusion: foun
 d PDF version <1.6>, but at most version <1.5> allowed
-<figs/rnn_diagram.pdf, id=316, 722.7pt x 542.025pt>
+<figs/rnn_diagram.pdf, id=315, 722.7pt x 542.025pt>
 File: figs/rnn_diagram.pdf Graphic file (type pdf)
 <use figs/rnn_diagram.pdf>
-Package pdftex.def Info: figs/rnn_diagram.pdf  used on input line 1524.
+Package pdftex.def Info: figs/rnn_diagram.pdf  used on input line 1533.
 (pdftex.def)             Requested size: 361.3491pt x 271.01183pt.
 [21 <./figs/rnn_diagram.pdf>] [22] [23]
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
-628.
+637.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ) [24]
-Overfull \hbox (11.00113pt too wide) in paragraph at lines 1647--1648
+Overfull \hbox (11.00113pt too wide) in paragraph at lines 1656--1657
 []\OT1/pcr/m/n/10.95 <--num[]sequences> \OT1/ptm/m/n/10.95 pos-i-tive in-te-ger
  spec-i-fy-ing how many se-quences to pro-cess \OT1/ptm/b/n/10.95 (hyper-parame
 ter) 
@@ -2096,10 +2103,10 @@ Package rerunfilecheck Info: File `hw7.out' has not changed.
 (rerunfilecheck)             Checksum: 20F57C21FB9ADC508F21AD909ACC5130;3524.
  ) 
 Here is how much of TeX's memory you used:
- 51312 strings out of 474486
- 1177614 string characters out of 5740416
+ 51303 strings out of 474486
+ 1177415 string characters out of 5740416
  1969542 words of memory out of 5000000
- 72487 multiletter control sequences out of 15000+600000
+ 72479 multiletter control sequences out of 15000+600000
  621992 words of font info for 195 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,17n,94p,1194b,1936s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2115,36 +2122,38 @@ grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Patrick Chen/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
 /Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra
 /cmex7.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Patrick Chen/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Patrick Chen
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Use
-rs/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Patrick Chen/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Patrick Chen/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Patr
-ick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-<C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Patrick Chen/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/P
-atrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/symbols/msbm10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/Patrick Chen/AppData/Local/
-Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/Patrick Chen/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Patrick C
-hen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrro8a.pfb><C:/Users
-/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C
-:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a
-.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on hw7.pdf (26 pages, 919040 bytes).
+lic/amsfonts/cmextra/cmex8.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Patrick Chen/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Patrick
+ Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
+:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Patrick Chen/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Patrick Chen
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/User
+s/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+7.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr8.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Patrick Chen/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Patrick Chen/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Pat
+rick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/latxfont/line10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Patrick Chen/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Pat
+rick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C
+:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb
+8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/cou
+rier/ucrr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type
+1/urw/courier/ucrro8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/
+fonts/type1/urw/times/utmb8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/
+MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on hw7.pdf (26 pages, 921266 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 166 named destinations out of 1000 (max. 500000)
+ 229 words of extra memory for PDF output out of 10000 (max. 10000000)
 
