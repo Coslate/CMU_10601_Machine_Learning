@@ -178,7 +178,8 @@ class ExperienceReplay:
         if len(self.replay_buffer) >= batch_size:
             return random.sample(self.replay_buffer, batch_size)
         else:
-            raise ValueError(f"Not enough experience in replay buffer to sample {batch_size} samples.")
+            return None
+            #raise ValueError(f"Not enough experience in replay buffer to sample {batch_size} samples.")
 
     
 
@@ -280,10 +281,11 @@ if __name__ == "__main__":
             if (replay_enabled == 1):
                 experience_replay.add(state_episode, action, reward, nxt_st)
                 sample_batches_exp = experience_replay.sample(batch_size)
-                for s_, a_, r_, s_next_ in sample_batches_exp:
-                    temperal_diff = Q(W, s_, a_) - (r_ + gamma*np.max(Q(W, s_next_)))
-                    grad_q = np.insert(s_, 0, 1)
-                    W[a_] -= lr*temperal_diff*grad_q
+                if sample_batches_exp is not None:
+                    for s_, a_, r_, s_next_ in sample_batches_exp:
+                        temperal_diff = Q(W, s_, a_) - (r_ + gamma*np.max(Q(W, s_next_)))
+                        grad_q = np.insert(s_, 0, 1)
+                        W[a_] -= lr*temperal_diff*grad_q
             else:
                 #if done:
                     #temperal_diff = Q(W, state_episode, action) - reward
