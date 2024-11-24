@@ -270,8 +270,8 @@ if __name__ == "__main__":
 
             # TODO: Select an action based on the state via the epsilon-greedy 
             #       strategy.
-            if np.random.rand() < epsilon:
-                action = random.randint(0, env.action_space-1)
+            if np.random.uniform(0, 1) < epsilon:
+                action = np.random.choice([i for i in range(env.action_space)])
             else:
                 action = selMaxAction(Q(W, state_episode))
 
