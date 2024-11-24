@@ -1443,21 +1443,22 @@ The following parts should be completed after you work through the programming p
     \begin{your_solution}[title=Plot of Raw, height=10cm]
         % YOUR ANSWER 
         % Figure inclusion example:
-        % \begin{center}
-        %    \includegraphics[width=0.8\linewidth]{YOUR IMAGE FILE}
-        % \end{center}
+        \begin{center}
+           \includegraphics[width=1\linewidth, height=0.6\columnwidth]{./Q5_1_mc_raw.png}
+        \end{center}
     \end{your_solution}
     
     \begin{your_solution}[title=Plot of Tile, height=10cm]
         % YOUR ANSWER
         % Figure inclusion example:
-        % \begin{center}
-        %    \includegraphics[width=0.8\linewidth]{YOUR IMAGE FILE}
-        % \end{center}
+        \begin{center}
+			\includegraphics[width=1\linewidth, height=0.6\columnwidth]{./Q5_1_mc_tile.png}
+		\end{center}
     \end{your_solution}
     
     \begin{your_solution}[title=Comment,height=5cm]
         % YOUR ANSWER 
+        The curve of raw feature shows that the rewards remain consistently low with sporadic spikes, and the rolling mean is nearly flat, indicating that the agent is not able to learn an effective policy for solving the task with raw features. On the other hand, the curve of tile feature shows obvious upward trend in both total rewards and the rolling mean, indicating that the agent's performance on the task is improving. Besides, the fluctuations of total rewards decrease as the episode going, showing the performance is becoming more stable as learning continues.
     \end{your_solution}
 
     \part[4] Now, run Q-learning on the mountain car environment (tiled features) with the replay buffer. \\
@@ -1471,10 +1472,14 @@ The following parts should be completed after you work through the programming p
         % \begin{center}
         %    \includegraphics[width=0.8\linewidth]{YOUR IMAGE FILE}
         % \end{center}
+        \begin{center}
+			\includegraphics[width=1\linewidth, height=0.6\columnwidth]{./Q5_2_mc_tile.png}
+		\end{center}        
     \end{your_solution}
     
     \begin{your_solution}[title=Comment,height=5cm]
         % YOUR ANSWER 
+        The curve of the total reward with replay buffer shows faster convergence than the curve without replay buffer. Besides, the fluctuations in total reward becomes smaller with replay buffer, and the rolling mean starts the upward trend at earlier episode than the one without replay buffer. I think it is because the replay buffer allows the agent to repeatedly sample batches of uncorrelated experiences to provide more diverse examples for learning, achieving better generalization by holding independent and identical distribution property needed by SGD optimization and avoiding over-fitting to the most recent episodes.
     \end{your_solution}
     
     \clearpage
@@ -1498,6 +1503,8 @@ The following parts should be completed after you work through the programming p
     
     \begin{your_solution}[title=Answer,height=5cm]
         % YOUR ANSWER 
+        For plot (a), it is likely to use the tile features because it shows smooth gradient across the state space, allowing the agent to learn how to distinguish the importance of different positions and velocities and thus reach the goal mountain car task.\newline
+        For plot (b), it is more likely to use the raw features because it shows ambiguous and unorganized goal that could let the agent to learn and reach the goal. Without clear optimization direction because of the lack of generalization in feature representation, the agent is unable to understand which states are good or bad, resulting in poor learning and results.
     \end{your_solution}
 
 
@@ -1507,6 +1514,7 @@ The following parts should be completed after you work through the programming p
 
     \begin{your_solution}[title=Answer,height=5cm]
         % YOUR ANSWER 
+        No, the value function cannot be nonlinear because the Q-values is formulated by $W_a\cdot s$ (with intercept term folded into $W_a$), which is a linear function, and the value function, $V(s) = \mathtt{max_a}Q(s, a)$, would be piecewise-linear function that comprises linear segments according to the action with the highest Q-value in state space.
     \end{your_solution}
  \begin{figure}[H]
         \centering
@@ -1528,6 +1536,8 @@ The following parts should be completed after you work through the programming p
         
     \begin{your_solution}[title=Answer,height=5cm]
         % YOUR ANSWER 
+        For plot (a), it is more likely be generated using tile features, as it shows detailed and clear decision boundaries for actions among the state spaces, even the small regions have clear decision boundary, suggesting that the agent has learned a robust policy using informative feature representation provided by the tile features. \\
+        For plot (b), it is more likely be generated using raw features, as the decision boundaries are much simpler and coarse, meaning that the agent only learns basic approximation of the optimal policy, failing to capture the complex state-action relationship due to the lack of informative and representative features for the task.
     \end{your_solution}
 \end{parts}
 
@@ -1545,7 +1555,11 @@ After you have completed all other components of this assignment, report your an
 
 \begin{your_solution}[height=6cm]
 % YOUR ANSWER 
-
+\begin{enumerate}
+	\item No.
+	\item No.
+	\item No.
+\end{enumerate}
 \end{your_solution}
 \newpage
 \section{Programming [68 Points]}

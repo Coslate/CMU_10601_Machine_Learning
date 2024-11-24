@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  22 NOV 2024 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  23 NOV 2024 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1843,51 +1843,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 1379--1385
 
  []
 
-[11] [12] [13
+[11] [12]
+<./Q5_1_mc_raw.png, id=213, 910.90312pt x 516.42938pt>
+File: ./Q5_1_mc_raw.png Graphic file (type png)
+<use ./Q5_1_mc_raw.png>
+Package pdftex.def Info: ./Q5_1_mc_raw.png  used on input line 1447.
+(pdftex.def)             Requested size: 419.29851pt x 251.57904pt.
+<./Q5_1_mc_tile.png, id=215, 971.12813pt x 557.08125pt>
+File: ./Q5_1_mc_tile.png Graphic file (type png)
+<use ./Q5_1_mc_tile.png>
+Package pdftex.def Info: ./Q5_1_mc_tile.png  used on input line 1455.
+(pdftex.def)             Requested size: 419.28105pt x 251.57678pt.
+ [13
 
-] [14] [15]
-<figs/value_A.png, id=229, 462.528pt x 346.896pt>
+ <./Q5_1_mc_raw.png>]
+<./Q5_2_mc_tile.png, id=224, 928.21782pt x 539.01375pt>
+File: ./Q5_2_mc_tile.png Graphic file (type png)
+<use ./Q5_2_mc_tile.png>
+Package pdftex.def Info: ./Q5_2_mc_tile.png  used on input line 1476.
+(pdftex.def)             Requested size: 419.29463pt x 251.58463pt.
+ [14 <./Q5_1_mc_tile.png>] [15 <./Q5_2_mc_tile.png>]
+<figs/value_A.png, id=236, 462.528pt x 346.896pt>
 File: figs/value_A.png Graphic file (type png)
 <use figs/value_A.png>
-Package pdftex.def Info: figs/value_A.png  used on input line 1484.
+Package pdftex.def Info: figs/value_A.png  used on input line 1489.
 (pdftex.def)             Requested size: 187.90271pt x 140.92615pt.
-<figs/value_B.png, id=231, 462.528pt x 346.896pt>
+<figs/value_B.png, id=237, 462.528pt x 346.896pt>
 File: figs/value_B.png Graphic file (type png)
 <use figs/value_B.png>
-Package pdftex.def Info: figs/value_B.png  used on input line 1489.
+Package pdftex.def Info: figs/value_B.png  used on input line 1494.
 (pdftex.def)             Requested size: 187.90271pt x 140.92615pt.
-<figs/policy_A.pdf, id=234, 440.25854pt x 338.33276pt>
+<figs/policy_A.pdf, id=240, 440.25854pt x 338.33276pt>
 File: figs/policy_A.pdf Graphic file (type pdf)
 <use figs/policy_A.pdf>
-Package pdftex.def Info: figs/policy_A.pdf  used on input line 1514.
+Package pdftex.def Info: figs/policy_A.pdf  used on input line 1522.
 (pdftex.def)             Requested size: 234.8775pt x 180.50288pt.
-<figs/policy_B.pdf, id=235, 440.25854pt x 338.33276pt>
+<figs/policy_B.pdf, id=241, 440.25854pt x 338.33276pt>
 File: figs/policy_B.pdf Graphic file (type pdf)
 <use figs/policy_B.pdf>
-Package pdftex.def Info: figs/policy_B.pdf  used on input line 1519.
+Package pdftex.def Info: figs/policy_B.pdf  used on input line 1527.
 (pdftex.def)             Requested size: 234.8775pt x 180.50288pt.
  [16
 
- <./figs/value_A.png> <./figs/value_B.png>]
-[17 <./figs/policy_A.pdf> <./figs/policy_B.pdf
+ <./figs/value_A.png> <./figs/value_B.png>] [17 <./figs/policy_A.pdf> <./figs/p
+olicy_B.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figs/policy_B.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
 >] [18
 
 ]
-<figs/MountainCar.png, id=316, 602.25pt x 399.4925pt>
+<figs/MountainCar.png, id=327, 602.25pt x 399.4925pt>
 File: figs/MountainCar.png Graphic file (type png)
 <use figs/MountainCar.png>
-Package pdftex.def Info: figs/MountainCar.png  used on input line 1601.
+Package pdftex.def Info: figs/MountainCar.png  used on input line 1615.
 (pdftex.def)             Requested size: 234.8775pt x 155.80144pt.
  [19] [20 <./figs/MountainCar.png>]
-Overfull \hbox (10.21124pt too wide) in paragraph at lines 1667--1668
+Overfull \hbox (10.21124pt too wide) in paragraph at lines 1681--1682
 [][] 
  []
 
 
-Overfull \hbox (10.21124pt too wide) in paragraph at lines 1703--1704
+Overfull \hbox (10.21124pt too wide) in paragraph at lines 1717--1718
 [][] 
  []
 
@@ -1897,34 +1914,34 @@ Overfull \hbox (10.21124pt too wide) in paragraph at lines 1703--1704
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 1
-759.
+773.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1759.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1773.
 
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
-764.
+778.
 
 (C:\Users\Patrick Chen\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Overfull \hbox (3.12878pt too wide) in paragraph at lines 1767--1769
+Overfull \hbox (3.12878pt too wide) in paragraph at lines 1781--1783
 []\OT1/ptm/m/n/10.95 where above \OT1/pcr/m/n/10.95 [args...] \OT1/ptm/m/n/10.9
 5 is a place-holder for command-line ar-gu-ments: \OT1/pcr/m/n/10.95 <env> <mod
 e> <weight[]out>
  []
 
 [23]
-Overfull \hbox (17.51517pt too wide) in paragraph at lines 1786--1787
+Overfull \hbox (17.51517pt too wide) in paragraph at lines 1800--1801
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ] 
  []
 
 
-Overfull \hbox (50.36543pt too wide) in paragraph at lines 1806--1807
+Overfull \hbox (50.36543pt too wide) in paragraph at lines 1820--1821
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ] 
  []
@@ -1948,11 +1965,11 @@ Package rerunfilecheck Info: File `hw8.out' has not changed.
 (rerunfilecheck)             Checksum: 8321A063AE451CC766D9FBF5EB2DF3EB;2843.
  ) 
 Here is how much of TeX's memory you used:
- 40719 strings out of 474486
- 819163 string characters out of 5740416
- 1953542 words of memory out of 5000000
- 62064 multiletter control sequences out of 15000+600000
- 617511 words of font info for 188 fonts, out of 8000000 for 9000
+ 40751 strings out of 474486
+ 819789 string characters out of 5740416
+ 1952542 words of memory out of 5000000
+ 62090 multiletter control sequences out of 15000+600000
+ 618350 words of font info for 193 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,26n,87p,1194b,1337s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1975,17 +1992,19 @@ atrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy6.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Patrick Chen/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/Patrick Chen
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><
-C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucr
-b8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/co
-urier/ucrr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/urw/times/utmb8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fo
-nts/type1/urw/times/utmr8a.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/Mi
-KTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on hw8.pdf (25 pages, 498755 bytes).
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Patrick Chen/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Pat
+rick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/li
+ne10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/symbols/msam10.pfb><C:/Users/Patrick Chen/AppData/Local/Programs/MiK
+TeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/Patrick Chen/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Patrick Chen/AppData/
+Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Patrick Chen/A
+ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Patrick
+ Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on hw8.pdf (25 pages, 1015192 bytes).
 PDF statistics:
- 510 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 530 PDF objects out of 1000 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
