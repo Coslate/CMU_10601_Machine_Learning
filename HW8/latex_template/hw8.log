@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  23 NOV 2024 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.5)  24 NOV 2024 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1967,7 +1967,7 @@ Package rerunfilecheck Info: File `hw8.out' has not changed.
 Here is how much of TeX's memory you used:
  40751 strings out of 474486
  819789 string characters out of 5740416
- 1952542 words of memory out of 5000000
+ 1953542 words of memory out of 5000000
  62090 multiletter control sequences out of 15000+600000
  618350 words of font info for 193 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2002,7 +2002,7 @@ grams/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Patrick Chen/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Patrick Chen/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Patrick
  Chen/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on hw8.pdf (25 pages, 1015192 bytes).
+Output written on hw8.pdf (25 pages, 1015186 bytes).
 PDF statistics:
  530 PDF objects out of 1000 (max. 8388607)
  140 named destinations out of 1000 (max. 500000)
