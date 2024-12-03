@@ -760,6 +760,8 @@ For questions where you must fill in a blank, please make sure your final answer
     
     \begin{minipage}{.3\textwidth}
     \begin{your_solution}[height=3cm, width=4cm]
+    	C (first principal component), \newline
+    	A (second principal component)
     \end{your_solution}
     \end{minipage}
     \begin{minipage}{.65\textwidth}
@@ -823,7 +825,7 @@ For questions where you must fill in a blank, please make sure your final answer
     % Change \choice to \CorrectChoice for the appropriate selection/selections
     \choice The variance of the data is maximized.
     \choice The reconstruction error is minimized.
-    \choice We can attribute certain variations in the data to unique principal components.
+    \CorrectChoice We can attribute certain variations in the data to unique principal components.
     \choice It ensures that our lower-dimensional data will be linearly separable.
     \choice None of the above
     \end{checkboxes}
@@ -838,7 +840,7 @@ For questions where you must fill in a blank, please make sure your final answer
     % Change \choice to \CorrectChoice for the appropriate selection/selections
     \choice We prefer (a), because it ensures randomness in the selection and have a better chance of representing the data well.
     \choice We prefer (a), because PCA introduces artificial bias and does not reflect the original features.
-    \choice We prefer (b), because PCA usually preserves higher variance than two original features.
+    \CorrectChoice We prefer (b), because PCA usually preserves higher variance than two original features.
     \choice We prefer (b), because PCA ensures that variance is evenly distributed across the features.
     \end{checkboxes}
     }
@@ -856,7 +858,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \begin{checkboxes}
     % YOUR ANSWER
     % Change \choice to \CorrectChoice for the appropriate selection/selections
-    \choice The features are highly correlated: we observe linearly proportional relationships where increases in \verb|petal_length| often correspond to increases in another feature
+    \CorrectChoice The features are highly correlated: we observe linearly proportional relationships where increases in \verb|petal_length| often correspond to increases in another feature
     \choice The features are highly correlated: we observe that the color classes can be separated with decision boundaries along the \verb|petal_length| axis.
     \choice The features are uncorrelated: we observe random noise as if the features were generated from independent distributions
     \choice The features are uncorrelated: we observe the ``default $y=x$'' relationship between features
@@ -866,6 +868,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \part[1]  If we wanted to find $k$ principal components such that we preserve \textbf{at least} 95\% of the variance in the data, what would be the value of $k$? Hint: it is helpful here to look at the cumulative variance in the first $k$ components, which we have calculated for you.
     
     \begin{your_solution}[height=2cm, width=.15\textwidth, title=$k$]
+    	2
     \end{your_solution}
 
     \clearpage
@@ -881,6 +884,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \end{figure}
     
     \begin{your_solution}[title=Explanation, height=5cm, width=0.9\textwidth]
+    	PCA is an appropriate dimensionality reduction method for the Fisher Iris Dataset as it preserves the variance and we can visualize the 2D data in Figure 1 that points are successfully clustered into its own kind of group. However, there are overlap between versicolor and virginica group of data points, meaning that PCA is not that good at separating low dimensional clusters away.
     \end{your_solution}
     
     
