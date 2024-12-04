@@ -1005,7 +1005,7 @@ For questions where you must fill in a blank, please make sure your final answer
     \begin{subparts}
     \subpart[1]  What is the minimum possible value of the objective function when minimizing over $k$? \\
     \begin{your_solution}[title=Answer, height=2cm, width=3cm]
-    	N
+    	0
     \end{your_solution}
     
     
@@ -1261,7 +1261,7 @@ Through some additional manipulation, it is further possible to show that ${\tex
 You do not need to provide a line of code unless you feel that it would help you in your explanation.
 
     \begin{your_solution}[title=Explanation, height=3cm, width=0.9\textwidth]
-    	The line 4 does not account for the symmetry property of the relationship matrix $\hat{M}$, meaning that the updates for $u_i$ and $u_j$ that updates $\hat{M_{ij}}$ in an iteration may not be necessarily identical to the updates for $u_j$ and $u_i$ that updates $\hat{M_{ji}}$ later. It would violates the symmetric relationship describing in the problem: all relationships are symmetric.
+    	The line 4 does not account for the case that if the matrix M has missing value on the sampling i and j, that is, $M_{ij}$ does not have data. In this case, it would cause line 6 impossible to execute.
     \end{your_solution}
 
 \subpart[1] \sone Based on the loss function given on line 6, derive an expression for $\nabla_{\vec{u}_j} \mathcal{L}(\vec{u}_i, \vec{u}_j)$ in terms of $\vec{u}_i$, $\vec{u}_j$, and $M_{ij}$. Note that $\sigma$ denotes the sigmoid function and $\log$ is natural log.
